@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ximmerse SDK for Unity3D (v1.0) by herohuyongtao</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ximmerse SDK for Unity3D (v1.0)</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/herohuyongtao/testdoc" class="btn">View on GitHub</a>
+      <a href="https://github.com/herohuyongtao/testdoc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/herohuyongtao/testdoc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+<p></p>
+
+<div align="right"><img src="imgs/xim.png" alt=""></div><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document Status:</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>Document Issue Number:</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Issue Date:</td>
+<td>2015-12-01</td>
+</tr>
+<tr>
+<td>Security Status:</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>YouSing Huang, Yongtao Hu, Jingwen Dai</td>
+</tr>
+</tbody>
+</table><hr class="underscore"><p>© 2015 XIMMERSE<br>All rights reserved</p><p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p><hr class="page"><p class="toc" style="undefined"></p>
+<strong>Table of Content</strong>
+<ul>
+<li><span class="title">
+<a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
+</span>
+<!--span class="number">
+0
+</span-->
+<ul>
+<li><span class="title">
+<a href="#1.1-foreword" title="1.1 Foreword">1.1 Foreword</a>
+</span>
+<!--span class="number">
+1
+</span-->
+</li>
+<li><span class="title">
+<a href="#1.2-test-environment" title="1.2 Test Environment">1.2 Test Environment</a>
+</span>
+<!--span class="number">
+2
+</span-->
+</li>
+<li><span class="title">
+<a href="#1.3-notes" title="1.3 Notes">1.3 Notes</a>
+</span>
+<!--span class="number">
+3
+</span-->
+</li>
+<li><span class="title">
+<a href="#1.4-technical-support" title="1.4 Technical Support">1.4 Technical Support</a>
+</span>
+<!--span class="number">
+4
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
+</span>
+<!--span class="number">
+5
+</span-->
+<ul>
+<li><span class="title">
+<a href="#2.1-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a>
+</span>
+<!--span class="number">
+6
+</span-->
+</li>
+<li><span class="title">
+<a href="#2.2-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a>
+</span>
+<!--span class="number">
+7
+</span-->
+</li>
+<li><span class="title">
+<a href="#2.3-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
+</span>
+<!--span class="number">
+8
+</span-->
+<ul>
+<li><span class="title">
+<a href="#2.3.1-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a>
+</span>
+<!--span class="number">
+9
+</span-->
+</li>
+<li><span class="title">
+<a href="#2.3.2-ximmerse's-joystick-(x-cobra)" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a>
+</span>
+<!--span class="number">
+10
+</span-->
+</li>
+<li><span class="title">
+<a href="#about-config-files" title="About Config Files">About Config Files</a>
+</span>
+<!--span class="number">
+11
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#2.4-programming" title="2.4 Programming">2.4 Programming</a>
+</span>
+<!--span class="number">
+12
+</span-->
+<ul>
+<li><span class="title">
+<a href="#2.4.1-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a>
+</span>
+<!--span class="number">
+13
+</span-->
+</li>
+<li><span class="title">
+<a href="#2.4.2-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a>
+</span>
+<!--span class="number">
+14
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#3-`ximmerse.core`-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
+</span>
+<!--span class="number">
+15
+</span-->
+<ul>
+<li><span class="title">
+<a href="#3.1-overview" title="3.1 Overview">3.1 Overview</a>
+</span>
+<!--span class="number">
+16
+</span-->
+</li>
+<li><span class="title">
+<a href="#3.2-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a>
+</span>
+<!--span class="number">
+17
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#4-`ximmerse.crossinput`-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
+</span>
+<!--span class="number">
+18
+</span-->
+<ul>
+<li><span class="title">
+<a href="#4.1-overview" title="4.1 Overview">4.1 Overview</a>
+</span>
+<!--span class="number">
+19
+</span-->
+</li>
+<li><span class="title">
+<a href="#4.2-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
+</span>
+<!--span class="number">
+20
+</span-->
+<ul>
+<li><span class="title">
+<a href="#4.2.1-`crossinputmanager`" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a>
+</span>
+<!--span class="number">
+21
+</span-->
+</li>
+<li><span class="title">
+<a href="#4.2.2-`unityinput`" title="4.2.2 UnityInput">4.2.2 UnityInput</a>
+</span>
+<!--span class="number">
+22
+</span-->
+</li>
+<li><span class="title">
+<a href="#4.2.3-`handjoystick`" title="4.2.3 HandJoystick">4.2.3 HandJoystick</a>
+</span>
+<!--span class="number">
+23
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#4.3-extensions" title=" 4.3 Extensions"> 4.3 Extensions</a>
+</span>
+<!--span class="number">
+24
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a>
+</span>
+<!--span class="number">
+25
+</span-->
+</li>
+<li><span class="title">
+<a href="#6-samples" title="6 Samples">6 Samples</a>
+</span>
+<!--span class="number">
+26
+</span-->
+<ul>
+<li><span class="title">
+<a href="#6.1-`crossinputmanagergui`" title="6.1 CrossInputManagerGUI">6.1 CrossInputManagerGUI</a>
+</span>
+<!--span class="number">
+27
+</span-->
+</li>
+<li><span class="title">
+<a href="#6.2-`handcontroller`" title="6.2 HandController">6.2 HandController</a>
+</span>
+<!--span class="number">
+28
+</span-->
+</li>
+<li><span class="title">
+<a href="#6.3-`unitytoximmerse`" title="6.3 UnityToXimmerse">6.3 UnityToXimmerse</a>
+</span>
+<!--span class="number">
+29
+</span-->
+</li>
+<li><span class="title">
+<a href="#6.4-`hydratoximmerse`" title="6.4 HydraToXimmerse">6.4 HydraToXimmerse</a>
+</span>
+<!--span class="number">
+30
+</span-->
+</li>
+</ul>
+</li>
+<li><span class="title">
+<a href="#7-developing-with-gear-vr" title="7 Developing with Gear VR">7 Developing with Gear VR</a>
+</span>
+<!--span class="number">
+31
+</span-->
+<ul>
+<li><span class="title">
+<a href="#7.1-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a>
+</span>
+<!--span class="number">
+32
+</span-->
+</li>
+<li><span class="title">
+<a href="#7.2-steps" title="7.2 Steps">7.2 Steps</a>
+</span>
+<!--span class="number">
+33
+</span-->
+</li>
+</ul>
+</li>
+</ul>
+
+<p></p><h2 id="1-release-statement"><a name="1-release-statement" href="#1-release-statement"></a>1 Release Statement</h2><h3 id="1.1-foreword"><a name="1.1-foreword" href="#1.1-foreword"></a>1.1 Foreword</h3><p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). ---><br>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p><h3 id="1.2-test-environment"><a name="1.2-test-environment" href="#1.2-test-environment"></a>1.2 Test Environment</h3><ul>
+<li>Operating System (OS): Windows 7 PC</li><li>Unity3D Engine Version: Unity 5.1.3f1 (32-bit)</li></ul><h3 id="1.3-notes"><a name="1.3-notes" href="#1.3-notes"></a>1.3 Notes</h3><ol>
+<li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li><li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li><li>It is recommended to use Versions 5.X due to its support for VR.</li><li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li></ol><h3 id="1.4-technical-support"><a name="1.4-technical-support" href="#1.4-technical-support"></a>1.4 Technical Support</h3><p><!--- - Contact Person: Mr. Huang ---></p><ul>
+<li>Email: <a href="mailto:support@ximmerse.com">support@ximmerse.com</a></li></ul><hr class="page"><h2 id="2-sdk-setup"><a name="2-sdk-setup" href="#2-sdk-setup"></a>2 SDK Setup</h2><h3 id="2.1-import-resource-package"><a name="2.1-import-resource-package" href="#2.1-import-resource-package"></a>2.1 Import Resource Package</h3><ol>
+<li>In an empty Unity project, click Unity menu <code>Assets</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-1" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mo" id="MathJax-Span-3" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">\rightarrow</script></span> <code>Import Package</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-4" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mo" id="MathJax-Span-6" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">\rightarrow</script></span> <code>Custom Package...</code><div align="center"><img src="imgs/Assets.png" alt=""></div></li><li>In the file selection dialog, select <code>Ximmerse SDK 1.0.unitypackage</code>.<div align="center"><img src="imgs/FileDialog.png" alt=""></div></li><li>In <code>Importing package</code>, click <code>Import</code>.<div align="center"><img src="imgs/ImportingPackage.png" alt=""></div></li><li>Done! There will be two folders named <code>Plugins</code> and <code>Ximmerse SDK</code> under folder <code>$(ProjectDir)/Assets</code>.<div align="center"><img src="imgs/Project.png" alt=""></div>
+
+</li></ol><h3 id="2.2-setup-ximmerse-sdk-under-unity-vr"><a name="2.2-setup-ximmerse-sdk-under-unity-vr" href="#2.2-setup-ximmerse-sdk-under-unity-vr"></a>2.2 Setup Ximmerse SDK under Unity VR</h3><blockquote>
+<p>Note: Please make sure that your Unity version supports VR mode, i.e. v5.1.0+.</p>
+</blockquote><ol>
+<li>Click Unity menu <code>File</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-7" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mo" id="MathJax-Span-9" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">\rightarrow</script></span> <code>Build Settings...</code><div align="center"><img src="imgs/File.png" alt=""></div></li><li>In <code>Build Settings</code>, click <code>Player Settings...</code>.<div align="center"><img src="imgs/BuildSettings.png" alt=""></div></li><li>In <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-10" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mo" id="MathJax-Span-12" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">\rightarrow</script></span> <code>Settings for PC, Mac &amp; Linux Standalone</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-5-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-13" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-14"><span class="mo" id="MathJax-Span-15" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-5">\rightarrow</script></span> check the <code>Virtual Reality Supported</code> checkbox.<div align="center"><img src="imgs/Settings.png" alt=""></div></li><li>Click Unity menu <code>File</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-16" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-17"><span class="mo" id="MathJax-Span-18" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">\rightarrow</script></span> <code>New Scene</code>, to create a scene.<div align="center"><img src="imgs/File2.png" alt=""></div></li><li>Select <code>Main Camera</code> game object in the <code>Hierachy</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-7-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-19" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-20"><span class="mo" id="MathJax-Span-21" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">\rightarrow</script></span> click Unity menu <code>GameObject</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-8-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-22" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-23"><span class="mo" id="MathJax-Span-24" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">\rightarrow</script></span> <code>Create Empty Child</code>, to add a child object.<div align="center"><img src="imgs/GameObject.png" alt=""></div></li><li>Right click the added object in the <code>Hierachy</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-9-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-25" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-26"><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">\rightarrow</script></span> <code>Rename</code>, to rename it to be <code>Pivot</code>.<div align="center"><img src="imgs/MainCamera.png" alt=""></div></li><li>In <code>Project Browser</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-10-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-28" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-29"><span class="mo" id="MathJax-Span-30" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">\rightarrow</script></span> <code>Assets</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-11-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-31" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-32"><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-11">\rightarrow</script></span> <code>Ximmerse SDK</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-12-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-34" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-35"><span class="mo" id="MathJax-Span-36" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-12">\rightarrow</script></span> <code>Prefabs</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-13-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-37" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-38"><span class="mo" id="MathJax-Span-39" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-13">\rightarrow</script></span> <code>Input</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-14-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-40" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-41"><span class="mo" id="MathJax-Span-42" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-14">\rightarrow</script></span> drag the prefabs named <code>_CrossInput</code> to the <code>Hierarchy</code> view to instantiate it.<div align="center"><img src="imgs/Project2.png" alt=""></div></li><li>In <code>Hierarchy</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-15-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-43" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-44"><span class="mo" id="MathJax-Span-45" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-15">\rightarrow</script></span> <code>_CrossInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-16-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-46" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-47"><span class="mo" id="MathJax-Span-48" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-16">\rightarrow</script></span> <code>_XimInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-17-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-49" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-50"><span class="mo" id="MathJax-Span-51" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-17">\rightarrow</script></span> <code>XimBlobTracking</code>.<div align="center"><img src="imgs/Hierarchy.png" alt=""></div></li><li>In <code>Inspector</code>, change ‘Pivot’ key to be the transform of game object <code>Pivot</code>, which is the child game object of <code>Main Camera</code>.<div align="center"><img src="imgs/Xim2.png" alt=""></div>
+
+</li></ol><h3 id="2.3-input-setup-for-ximmerse-hardwares"><a name="2.3-input-setup-for-ximmerse-hardwares" href="#2.3-input-setup-for-ximmerse-hardwares"></a>2.3 Input Setup for Ximmerse Hardwares</h3><h4 id="2.3.1-stereo-camera-component"><a name="2.3.1-stereo-camera-component" href="#2.3.1-stereo-camera-component"></a>2.3.1 Stereo Camera Component</h4><p>Item <code>Pose Name</code> under <code>Points</code> refers to the key of the corresponding <code>VirtualPose</code>.</p><div align="center"><img src="imgs/Xim3.png" alt=""></div><h4 id="2.3.2-ximmerse's-joystick-(x-cobra)"><a name="2.3.2-ximmerse's-joystick-(x-cobra)" href="#2.3.2-ximmerse's-joystick-(x-cobra)"></a>2.3.2 Ximmerse’s Joystick (X-COBRA)</h4><p>In file <code>$(ProjectDir)/Assets/Ximmerse SDK/Prefabs/Input/X-Cobra Alpha 0/Sensors</code>, there are 4 subclasses of <code>SensorBase</code>, which refers to IMU, button, trigger and axis respectively.</p><div align="center"><img src="imgs/Create.png" alt=""></div><ol>
+<li><strong>IMU</strong>: Item <code>Pose Name</code> refers to the key of the corresponding <code>VirtualPose</code>. <div align="center"><img src="imgs/Inspector2.png" alt=""></div></li><li><strong>Button</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualButton</code>. <div align="center"><img src="imgs/Inspector3.png" alt=""></div></li><li><strong>Trigger</strong>: <code>Axis Name</code> refers to the key of the corresponding <code>VirtualAxis</code> and <code>Button Name</code> refers to the key of the corresponding <code>VirtualButton</code>. <div align="center"><img src="imgs/Inspector4.png" alt=""></div></li><li><strong>Axis</strong>: Enter edit mode by checking the <code>Edit Mode</code> checkbox in <code>Inspector</code> view. The left columns are display names (for easy editing) and right columns refer to the keys of the corresponding <code>VirtualAxis</code>. <div align="center"><img src="imgs/Inspector5.png" alt=""></div>
+
+</li></ol><h4 id="about-config-files"><a name="about-config-files" href="#about-config-files"></a>About Config Files</h4><p>There is one config file <code>CrossInput.txt</code> under folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Resources/Configs</code>, through which you can setup detailed parameters of Ximmerse hardwares after the release of Unity build applications.</p><div align="center"><img src="imgs/Project3.png" alt=""></div><p>In this SDK, there are two <code>MonoBehaviour</code> scripts, i.e. <code>XimBlobTracking_Usb.cs</code> and <code>DeviceBase.cs</code>, which use the config file. In both scripts, there are two shared keywords, i.e. <code>configPath</code> and <code>configSec</code>. <code>configPath</code> refers to the path of the config file and <code>configSec</code> refers to the referred section in the config file. Please refer <a href="https://en.wikipedia.org/wiki/INI_file">here</a> to know more about the file formats of config files.</p><p>In the following two screenshots of the <code>Inspector</code> view, the red boxes highlight the setups of the config files and blue boxes highlight the fields that can be edited in the config file.</p><div align="center"><br><img src="imgs/Xim4.png" alt=""> <img src="imgs/DeviceBase2.png" alt=""><br></div><p>You can see the corresponding sections and fields in file <code>CrossInput.txt</code>.</p><div align="center"><img src="imgs/CrossInput3.png" alt=""></div><p>If you don’t want to use config files, just set <code>configPath</code> to be empty and write the parameters of config files to the corresponding fields of <code>MonoBehaviour</code> script.</p><h3 id="2.4-programming"><a name="2.4-programming" href="#2.4-programming"></a>2.4 Programming</h3><h4 id="2.4.1-access-axes-and-buttons"><a name="2.4.1-access-axes-and-buttons" href="#2.4.1-access-axes-and-buttons"></a>2.4.1 Access Axes and Buttons</h4><ol>
+<li>Import <code>Ximmerse.CrossInput</code> namespace.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>using Ximmerse.CrossInput;
+</code></pre>"><span class="hljs-keyword">using</span> Ximmerse.CrossInput;
+</code></pre>
+</li><li>Access the <code>Horizontal</code> axis of left joystick and the <code>Vertical</code> axis of right joystick.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>float left_h  =CrossInputManager.GetAxis(&quot;Left_Horizontal&quot;);
+float right_v =CrossInputManager.GetAxis(&quot;Right_Vertical&quot;);
+</code></pre>"><span class="hljs-keyword">float</span> left_h  =CrossInputManager.GetAxis(<span class="hljs-string">"Left_Horizontal"</span>);
+<span class="hljs-keyword">float</span> right_v =CrossInputManager.GetAxis(<span class="hljs-string">"Right_Vertical"</span>);
+</code></pre>
+These information can also be obtained by <code>HandJoystick</code> as follows, which are equivalent to the above functions.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>float left_h  =HandJoystick.joysticks[0].GetAxis(&quot;Horizontal&quot;);
+float right_v =HandJoystick.joysticks[1].GetAxis(&quot;Vertical&quot;);
+</code></pre>"><span class="hljs-keyword">float</span> left_h  =HandJoystick.joysticks[<span class="hljs-number">0</span>].GetAxis(<span class="hljs-string">"Horizontal"</span>);
+<span class="hljs-keyword">float</span> right_v =HandJoystick.joysticks[<span class="hljs-number">1</span>].GetAxis(<span class="hljs-string">"Vertical"</span>);
+</code></pre>
+</li><li><p>Access the <code>Fire1</code> button of left joystick and the <code>Jump</code> button of right joystick.</p>
+<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;> if(CrossInputManager.GetButtonDown(&quot;Left_Fire1&quot;)) {
+     // Let's fire...
+ }
+
+ if(CrossInputManager.GetButtonDown(&quot;Right_Jump&quot;)){
+     // Let's jump...
+ }
+</code></pre>"> <span class="hljs-keyword">if</span>(CrossInputManager.GetButtonDown(<span class="hljs-string">"Left_Fire1"</span>)) {
+     <span class="hljs-comment">// Let's fire...</span>
+ }
+
+ <span class="hljs-keyword">if</span>(CrossInputManager.GetButtonDown(<span class="hljs-string">"Right_Jump"</span>)){
+     <span class="hljs-comment">// Let's jump...</span>
+ }
+</code></pre>
+<p>Similarly, these information can also be obtained by <code>HandJoystick</code> as follows, which are equivalent to the above functions.</p>
+<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;> if(HandJoystick.joysticks[0].GetButtonDown(&quot;Fire1&quot;)){
+     // Let's fire...
+ }
+
+ if(HandJoystick.joysticks[1].GetButtonDown(&quot;Jump&quot;)){
+     // Let's jump...
+ }
+</code></pre>"> <span class="hljs-keyword">if</span>(HandJoystick.joysticks[<span class="hljs-number">0</span>].GetButtonDown(<span class="hljs-string">"Fire1"</span>)){
+     <span class="hljs-comment">// Let's fire...</span>
+ }
+
+ <span class="hljs-keyword">if</span>(HandJoystick.joysticks[<span class="hljs-number">1</span>].GetButtonDown(<span class="hljs-string">"Jump"</span>)){
+     <span class="hljs-comment">// Let's jump...</span>
+ }
+</code></pre>
+</li></ol><h4 id="2.4.2-access-position-and-rotation"><a name="2.4.2-access-position-and-rotation" href="#2.4.2-access-position-and-rotation"></a>2.4.2 Access Position and Rotation</h4><p>Taking the sample script <code>HandController.cs</code> under folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Example Scripts</code> as an example:</p><div align="center"><img src="imgs/Assets2.png" alt=""></div><ol>
+<li>Import <code>Ximmerse.CrossInput</code> namespace.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>using Ximmerse.CrossInput;
+</code></pre>"><span class="hljs-keyword">using</span> Ximmerse.CrossInput;
+</code></pre>
+</li><li><p>Obtain the reference of <code>VirtualPose</code> by <code>CrossInputManager.VirtualPoseReference(poseName)</code>.</p>
+<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>m_Pose=CrossInputManager.VirtualPoseReference(poseName);
+</code></pre>">m_Pose=CrossInputManager.VirtualPoseReference(poseName);
+</code></pre>
+<p>The properties and fields of <code>VirtualPose</code> are as follows:</p>
+<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;> public class VirtualPose:SmartPointer{
+     public string name{
+         get;
+         private set;
+     }
+     public bool matchWithInputManager {
+         get;
+         private set;
+     }
+
+     public bool active=true;
+     public int id;
+
+     public Vector3 position;
+     public Quaternion rotation;
+
+     ...
+ }
+</code></pre>"> <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> VirtualPose:SmartPointer{
+     <span class="hljs-keyword">public</span> <span class="hljs-built_in">string</span> name{
+         get;
+         <span class="hljs-keyword">private</span> <span class="hljs-built_in">set</span>;
+     }
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> matchWithInputManager {
+         get;
+         <span class="hljs-keyword">private</span> <span class="hljs-built_in">set</span>;
+     }
+
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> active=<span class="hljs-keyword">true</span>;
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> id;
+
+     <span class="hljs-keyword">public</span> Vector3 position;
+     <span class="hljs-keyword">public</span> Quaternion rotation;
+
+     ...
+ }
+</code></pre>
+</li><li>Set <code>position</code> and <code>rotation</code> of <code>Transform</code> to be <code>position</code> and <code>rotation</code> of <code>VirtualPose</code> in functions like <code>MonoBehaviour.FixedUpdate()</code>.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;> /// &amp;lt;summary&amp;gt;
+ ///
+ /// &amp;lt;/summary&amp;gt;
+ protected virtual void FixedUpdate(){
+     //
+     m_HandTrans.position=m_Pose.position;
+     m_HandTrans.rotation=m_Pose.rotation;
+ }
+</code></pre>"> <span class="hljs-comment">/// &lt;summary&gt;</span>
+ <span class="hljs-comment">///</span>
+ <span class="hljs-comment">/// &lt;/summary&gt;</span>
+ <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FixedUpdate</span><span class="hljs-params">()</span></span>{
+     <span class="hljs-comment">//</span>
+     m_HandTrans.position=m_Pose.position;
+     m_HandTrans.rotation=m_Pose.rotation;
+ }
+</code></pre>
+</li></ol><hr class="page"><h2 id="3-`ximmerse.core`-namespace"><a name="3-`ximmerse.core`-namespace" href="#3-`ximmerse.core`-namespace"></a>3 <code>Ximmerse.Core</code> Namespace</h2><h3 id="3.1-overview"><a name="3.1-overview" href="#3.1-overview"></a>3.1 Overview</h3><p>This namespace is used for accessing the APIs of Ximmerse’s hardwares. As our beta versions are still in a fast iteration stage, there will be different versions for the supported hardware. Please pay attention to what your DK version is. Though there will be big changes for this namespace, it should be OK to use Ximmerse hardwares with general software as long as the name and address of the equipment are set properly. Note that in most cases, you will not need to access this namespace. In terms of input interfaces, you only need to access <code>Ximmerse.CrossInput</code>. You can also apply Razer’s Hydra in developing as <code>Ximmerse.CrossInput</code> is a compatible input solution.</p><h3 id="3.2-brief-introduction"><a name="3.2-brief-introduction" href="#3.2-brief-introduction"></a>3.2 Brief Introduction</h3><p>In Unity, Ximmerse’s joystick (X-COBRA) is abstracted as <code>DeviceBase</code>. Information related to the Ximmerse’s joystick (e.g. axes, buttons, triggers and IMU) is abstracted as <code>SensorBase</code>.</p><p>Prefabs should set up automatically in the SDK. Developers only need to set the corresponding config file under folder <code>project_folder/Ximmerse SDK/Resources/Configs/</code> in order to setup Ximmerse’s X-COBRA after the formal release.</p><p><code>DeviceName</code> is the device number. Please refer to the <code>txt</code> file under the crossponding samples.</p><p><code>DeviceAddress</code> is the serial port address under Windows, which is the Bluetooth address under Android.</p><p><code>FmtJoy</code> refers to the character string of the input formatted key. For example, key <code>"Fire1"</code> will be formatted to <code>"Left_ Fire1"</code> in <code>CrossInputManager</code> (under <code>Ximmerse.CrossInput</code> namespace) when joystick’s <code>FmtJoy</code> is <code>"Left_{0}"</code>.</p><div align="center"><img src="imgs/DeviceBase.png" alt=""></div><p>USB is used for communication of the stereo camera module, which is recommended to setup in the <code>txt</code> file under folder <code>project_folder/Assets/StreamingAssets/Configs/</code>.</p><p>In general cases, the listener IP should be set to <code>192.168.1.1</code>, the port number to <code>8873</code> and assign Pivot properly, which stands for one <code>Transform</code> of the stereo camera module in Unity (as the next child transform under the head-mounted display coordinate system in VR SDK). <code>Sensitivity</code> is the coordinate scaling value. <code>PoseName</code> in the <code>Points</code> list is the projected pose name.</p><div align="center"><img src="imgs/BlobTracking.png" alt=""></div><p>Remarks:</p><ul>
+<li>Config files are located under folders below:<ul>
+<li>Unity editor: <code>project_folder/Ximmerse SDK/Resources/Configs/</code></li><li>Windows release version: <code>release_folder/release_folder_Data/StreamingAssets/Configs/</code></li><li>Android release version: <code>Android_SD_card_root_folder/Ximmerse Runtime/Configs/</code></li></ul>
+</li></ul><hr class="page"><h2 id="4-`ximmerse.crossinput`-namespace"><a name="4-`ximmerse.crossinput`-namespace" href="#4-`ximmerse.crossinput`-namespace"></a>4 <code>Ximmerse.CrossInput</code> Namespace</h2><h3 id="4.1-overview"><a name="4.1-overview" href="#4.1-overview"></a>4.1 Overview</h3><p><strong>Compatible solution for multiple input.</strong> <code>CrossInputManager</code> is the access entry point, which is modified from the official sample <code>UnityStandardAssets.CrossPlatformInput</code>. In order to run <code>Ximmerse.CrossInput</code> successfully, <code>GameObject</code> with <code>CrossInputManager</code> component (whose properties source list should also be set up properly) should be added to the game scene.</p><blockquote>
+<p>Tip: You can turn off <code>CrossInputManager</code>‘s <code>useCrossInput</code> before running so that <code>CrossInputManager</code> will use the embedded input APIs of Unity.</p>
+</blockquote><p>On the other hand, you can customize other input solutions, such as Razer’s Hydra, Xbox 360 controller or Ximmerse’s joystick (X-COBRA). Instead of writing different access interfaces for different input solutions, you only need to access the static functions of <code>CrossInputManager</code>.</p><p>For example, assuming you want to acquire the status of the joystick and button (pressed or not), you will need to call <code>Input.GetAxis(axisName)</code> and <code>Input.GetButton(buttonName)</code> in native Unity programming. With <code>Ximmerse.CrossInput</code> input system, they can be easily replaced by <code>CrossInputManager.GetAxis(axisName)</code> and <code>CrossInputManager.GetButton(buttonName)</code>.</p><p>Current input solutions can be divided into two categories: traditional controllers (keyboard &amp; mouse and joystick) and motion controllers (with position and orientation in space). With <code>Ximmerse.CrossInput</code>, motion sensing input is abstracted as <code>VirtualPose</code> class (with position and orientation in space). You can obtain the reference of the <code>VirtualPose</code> by simply calling <code>CrossInputManager.VirtualPoseReference(name)</code>.</p><blockquote>
+<p>Tip: In the <code>UnityStandardAssets.CrossPlatformInput</code> sample, joystick and button are abstracted as <code>VirtualAxis</code> and <code>VirtualButton</code>. Please refer to the <a href="#extension">Extensions</a> section on how to extend <code>Ximmerse.CrossInput</code>.</p>
+</blockquote><p>In this SDK, the full preset hierarchy is as follows. To disable one particular input component, simply set <code>GameObject</code>‘s <code>active</code> to <code>false</code> on the respective script.</p><div align="center"><br><img src="imgs/CrossInputManager.png" alt=""> <img src="imgs/CrossInput.png" alt=""><br></div><h3 id="4.2-selected-classes-introduction"><a name="4.2-selected-classes-introduction" href="#4.2-selected-classes-introduction"></a>4.2 Selected Classes Introduction</h3><h4 id="4.2.1-`crossinputmanager`"><a name="4.2.1-`crossinputmanager`" href="#4.2.1-`crossinputmanager`"></a>4.2.1 <code>CrossInputManager</code></h4><p><strong>Input manager, similar to <code>UnityStandardAssets.CrossPlatformInput</code>.</strong><br>The related input APIs of <code>CrossPlatformInputManager</code> are as follows:</p><table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>AxisExists(String)</code></td>
+<td>return true while the virtual axis identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>ButtonExists(String)</code></td>
+<td>return true while the virtual button identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Single</code></td>
+<td><code>GetAxis(String)</code></td>
+<td>return the value of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>Single</code></td>
+<td><code>GetAxisRaw(String)</code></td>
+<td>return the value of the virtual axis identified by given string with no smoothing filtering applied</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButton(String)</code></td>
+<td>return true while the virtual button identified by given string is held down</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButtonDown(String)</code></td>
+<td>return true during the frame the user pressed down the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButtonUp(String)</code></td>
+<td>return true the first frame the user releases the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>PoseExists(String)</code></td>
+<td>return true while the virtual pose identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Vector3</code></td>
+<td><code>GetPosePosition(String)</code></td>
+<td>return the value of the position in the space identified by given string</td>
+</tr>
+<tr>
+<td><code>Quaternion</code></td>
+<td><code>GetPoseRotation(String)</code></td>
+<td>return the value of the rotation in the space identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualAxis(VirtualAxis)</code></td>
+<td>register one virtual axis to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualButton(VirtualButton)</code></td>
+<td>register one virtual button to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualPose(VirtualPose)</code></td>
+<td>register one virtual pose to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxis(String,Single)</code></td>
+<td>set the value of the axis identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisNegative(String)</code></td>
+<td>set the value of the axis identified by given string to -1</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisPositive(String)</code></td>
+<td>set the value of the axis identified by given string to 1</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisZero(String)</code></td>
+<td>set the value of the axis identified by given string to 0</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetButtonDown(String)</code></td>
+<td>set the virtual button identified by given string to be held down</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetButtonUp(String)</code></td>
+<td>set the virtual button identified by given string to be released</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPose(String,Vector3,Quaternion)</code></td>
+<td>set the value of the pose identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPosePosition(String,Vector3)</code></td>
+<td>set the value of the position identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPoseRotation(String,Quaternion)</code></td>
+<td>set the value of the rotation identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionX(Single)</code></td>
+<td>set the value of x-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionY(Single)</code></td>
+<td>set the value of y-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionZ(Single)</code></td>
+<td>set the value of z-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualAxis(VirtualAxis)</code></td>
+<td>un-register one virtual axis</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualButton(VirtualButton)</code></td>
+<td>un-register one virtual button</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualPose(VirtualPose)</code></td>
+<td>un-register one virtual pose</td>
+</tr>
+<tr>
+<td><code>VirtualAxis</code></td>
+<td><code>VirtualAxisReference(String)</code></td>
+<td>return the reference of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualAxis</code></td>
+<td><code>VirtualAxisReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualButton</code></td>
+<td><code>VirtualButtonReference(String)</code></td>
+<td>return the reference of the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualButton</code></td>
+<td><code>VirtualButtonReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualPose</code></td>
+<td><code>VirtualPoseReference(String)</code></td>
+<td>return the reference of the virtual pose identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualPose</code></td>
+<td><code>VirtualPoseReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual pose identified by given string</td>
+</tr>
+</tbody>
+</table><p>Remarks:</p><ol>
+<li>A mouse’s axis information can be obtained by <code>CrossInputManager.mousePosition</code>. Due to poor user experience, it is not recommended to use traditional mouse as VR input.</li><li>Alike <code>UnityEngine.Input</code>, <code>CrossInputManager</code>‘s interface can only be accessed in <code>MonoBehaviour.Update()</code>.</li><li>The priority of <code>CrossInputManager</code> script should be set higher than the normal ones in order to make sure input can be written to <code>CrossInputManager</code>‘s cache while being called. This can be set in <code>Edit</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-18-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-52" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-53"><span class="mo" id="MathJax-Span-54" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-18">\rightarrow</script></span><code>Project Settings</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-19-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-55" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-56"><span class="mo" id="MathJax-Span-57" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-19">\rightarrow</script></span><code>Script Execution Order</code>:<div align="center"><img src="imgs/Inspector.png" alt=""></div>
+
+</li></ol><h4 id="4.2.2-`unityinput`"><a name="4.2.2-`unityinput`" href="#4.2.2-`unityinput`"></a>4.2.2 <code>UnityInput</code></h4><p>You can write the embedded input of Unity to <code>CrossInputManager</code>‘s input cache. The embedded input of Unity can be further obtained through <code>CrossInputManager</code>.</p><div align="center"><img src="imgs/UnityInput.png" alt=""></div><h4 id="4.2.3-`handjoystick`"><a name="4.2.3-`handjoystick`" href="#4.2.3-`handjoystick`"></a>4.2.3 <code>HandJoystick</code></h4><p><strong>Input interface to distinguish left and right hands.</strong> It’s not easy to distinguish left and right hands as strings are used as keys in <code>CrossInputManager</code>. With the handy accessor <code>HandJoystick</code>, developers can use formatted strings and the string arrays of input keys to instantiate an instance. Input can be accessed by <code>HandJoystick.GetAxis(axisName)</code> and <code>HandJoystick.GetButton(buttonName)</code>. Please refer to the following example:</p><pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>string[] joystickFmts=new string[2]{&quot;j0_{0}&quot;,&quot;j1_{0}&quot;}; // joystick list
+string[] axes=new string[2]{&quot;Horizontal&quot;,&quot;Vertical&quot;}; // axes list
+string[] buttons=new string[4]{&quot;Fire1&quot;,&quot;Fire2&quot;,&quot;Fire3&quot;,&quot;Jump&quot;}; // button list
+HandJoystick[] joysticks=new HandJoystick[2]{new HandJoystick(),new HandJoystick()}; // HandJoystick list
+
+// initialize HandJoystick
+joysticks[0].InitInput(joystickFmts[0],axes,joystickFmts[0],buttons, &quot;&quot;);
+joysticks[1].InitInput(joystickFmts[1],axes,joystickFmts[1],buttons, &quot;&quot;);
+
+// access input through HandJoystick
+joysticks[0].GetAxis(&quot;Horizontal&quot;); // use short key &quot;Horizontal&quot;, actual registered key is &quot;j0_Horizontal&quot;
+joysticks[1].GetButtonDown(&quot;Fire1&quot;); // use short key &quot;Fire1&quot;, actual registered key is &quot;j1_Fire1&quot;
+</code></pre>"><span class="hljs-built_in">string</span>[] joystickFmts=<span class="hljs-keyword">new</span> <span class="hljs-built_in">string</span>[<span class="hljs-number">2</span>]{<span class="hljs-string">"j0_{0}"</span>,<span class="hljs-string">"j1_{0}"</span>}; <span class="hljs-comment">// joystick list</span>
+<span class="hljs-built_in">string</span>[] axes=<span class="hljs-keyword">new</span> <span class="hljs-built_in">string</span>[<span class="hljs-number">2</span>]{<span class="hljs-string">"Horizontal"</span>,<span class="hljs-string">"Vertical"</span>}; <span class="hljs-comment">// axes list</span>
+<span class="hljs-built_in">string</span>[] buttons=<span class="hljs-keyword">new</span> <span class="hljs-built_in">string</span>[<span class="hljs-number">4</span>]{<span class="hljs-string">"Fire1"</span>,<span class="hljs-string">"Fire2"</span>,<span class="hljs-string">"Fire3"</span>,<span class="hljs-string">"Jump"</span>}; <span class="hljs-comment">// button list</span>
+HandJoystick[] joysticks=<span class="hljs-keyword">new</span> HandJoystick[<span class="hljs-number">2</span>]{<span class="hljs-keyword">new</span> HandJoystick(),<span class="hljs-keyword">new</span> HandJoystick()}; <span class="hljs-comment">// HandJoystick list</span>
+
+<span class="hljs-comment">// initialize HandJoystick</span>
+joysticks[<span class="hljs-number">0</span>].InitInput(joystickFmts[<span class="hljs-number">0</span>],axes,joystickFmts[<span class="hljs-number">0</span>],buttons, <span class="hljs-string">""</span>);
+joysticks[<span class="hljs-number">1</span>].InitInput(joystickFmts[<span class="hljs-number">1</span>],axes,joystickFmts[<span class="hljs-number">1</span>],buttons, <span class="hljs-string">""</span>);
+
+<span class="hljs-comment">// access input through HandJoystick</span>
+joysticks[<span class="hljs-number">0</span>].GetAxis(<span class="hljs-string">"Horizontal"</span>); <span class="hljs-comment">// use short key "Horizontal", actual registered key is "j0_Horizontal"</span>
+joysticks[<span class="hljs-number">1</span>].GetButtonDown(<span class="hljs-string">"Fire1"</span>); <span class="hljs-comment">// use short key "Fire1", actual registered key is "j1_Fire1"</span>
+</code></pre><h3 id="4.3-extensions"><a name="4.3-extensions" href="#4.3-extensions"></a><a name="extension"></a> 4.3 Extensions</h3><p>As mentioned above, different input solutions are abstracted as <code>IInputSource</code> interfaces in SDK. Thus, developers can customize multiple input solutions of their own.<br>The interface function of <code>IInputSource</code> is as follows:</p><pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>public interface IInputSource
+{
+    // Methods
+    int EnterInputFrame();
+    int ExitInput();
+    int ExitInputFrame();
+    int InitInput();
+
+    // Properties
+    bool enabled {get; set;}
+}
+</code></pre>"><span class="hljs-keyword">public</span> interface IInputSource
+{
+    <span class="hljs-comment">// Methods</span>
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">EnterInputFrame</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ExitInput</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ExitInputFrame</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">InitInput</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-comment">// Properties</span>
+    <span class="hljs-keyword">bool</span> enabled {get; <span class="hljs-built_in">set</span>;}
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InitInput()</code></td>
+<td>initialize input source, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>ExitInput()</code></td>
+<td>exit input source and release related sources, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>EnterInputFrame()</code></td>
+<td>enter input frame, write corresponding input information to CrossInputManager’s input cache, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>ExitInputFrame()</code></td>
+<td>exit input frame, return 0 if successful</td>
+</tr>
+</tbody>
+</table><p>Remarks:</p><ol>
+<li>Input cache refers to the list of <code>VirtualAxis</code>, <code>VirtualButton</code> and <code>VirtualPose</code> of <code>CrossInputManager</code>.</li><li>Input frame refers to the time stamp when the program reads the input (<code>MonoBehaviour.Update()</code>).</li></ol><p>In order to run in <code>Ximmerse.CrossInput</code>, it only needs to implement the <code>MonoBehaviour</code> of <code>IInputSource</code>‘s interface and add it to the property source list of <code>CrossInputManager</code>.</p><p>Similarly, Razer’s Hydra can also be used due to its compatibility with <code>Ximmerse.CrossInput</code> by adding its SDK <code>SixenseUnityPlugin</code> to the project and compatible scipt <code>Sixense Input.cs</code> to <code>CrossInputManager</code>.</p><div align="center"><img src="imgs/SixenseInput.png" alt=""></div><hr class="page"><h2 id="5-other-namespaces"><a name="5-other-namespaces" href="#5-other-namespaces"></a>5 Other Namespaces</h2><p>Some scripts belong to the Utility class. Demos are available for them where you can edit to fit your needs. Some namespaces belong to low level encapsulation of the SDK which in general cases, will not be used in project development.<br>There are some other namespaces in this SDK, including:</p><ul>
+<li><code>Ximmerse.Animation</code>: for easy implementation of animation solutions, like <code>HandAnimator</code>.</li><li><code>Ximmerse.IO</code>: for IO Stream under Windows and Android and encapsulation of IO tools class.</li><li><code>Ximmerse.UI</code>: for extension of UGUI and the compatible solution of traditional UI and VR UI.</li></ul><hr class="page"><h2 id="6-samples"><a name="6-samples" href="#6-samples"></a>6 Samples</h2><blockquote>
+<p>Note: all samples can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/</code>.</p>
+</blockquote><h3 id="6.1-`crossinputmanagergui`"><a name="6.1-`crossinputmanagergui`" href="#6.1-`crossinputmanagergui`"></a>6.1 <code>CrossInputManagerGUI</code></h3><p><strong>The profiler of <code>Ximmerse.CrossInput.CrossInputManager</code>, from which you can clearly see the input status of <code>CrossInputManager</code>.</strong></p><div align="center"><img src="imgs/CrossInputManagerGUI.png" alt=""></div><h3 id="6.2-`handcontroller`"><a name="6.2-`handcontroller`" href="#6.2-`handcontroller`"></a>6.2 <code>HandController</code></h3><p>This sample demonstrates how to obtain the <code>VirtualPose</code> and how to control hand stretches using the trigger value.</p><div align="center"><img src="imgs/hand.png" alt=""></div><h3 id="6.3-`unitytoximmerse`"><a name="6.3-`unitytoximmerse`" href="#6.3-`unitytoximmerse`"></a>6.3 <code>UnityToXimmerse</code></h3><p>This sample demonstrates how to quickly transfer a Unity project to <code>Ximmerse.CrossInput</code>.</p><p>Transfers can be done by setting <code>Input</code> or <code>CrossPlatformInputManager</code> to <code>CrossInputManager</code> through <code>using</code> keyword.</p><pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO: only need to modify here
+// using UnityStandardAssets.CrossPlatformInput;
+using CrossPlatformInputManager=Ximmerse.CrossInput.CrossInputManager;
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO: only need to modify here</span>
+<span class="hljs-comment">// using UnityStandardAssets.CrossPlatformInput;</span>
+<span class="hljs-keyword">using</span> CrossPlatformInputManager=Ximmerse.CrossInput.CrossInputManager;
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre><p>If the Unity interface is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/UnityInterfaceView.png" alt=""></div><p>If the <code>Ximmerse.CrossInput</code> interface is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/CrossInputInterfaceView.png" alt=""></div><h3 id="6.4-`hydratoximmerse`"><a name="6.4-`hydratoximmerse`" href="#6.4-`hydratoximmerse`"></a>6.4 <code>HydraToXimmerse</code></h3><p>This sample demonstrates how to quickly transfer a Razer’s Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p><p>If <code>SixenseHands</code> of <code>SixenseInput SDK</code> is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight.png" alt=""></div><p>If <code>HydraToXimmerse</code> of this SDK is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight2.png" alt=""></div><ol>
+<li>First remove the original <code>SixenseInput</code> and add the preset object of <code>CrossInputManager</code> then, check the <code>As Hand Joystick</code> checkbox of the compatible <code>CrossInput</code>‘s <code>SixenseInput</code>, <code>HandJoystick</code> thus will create two joystick accessors automatically.<div align="center"><img src="imgs/SixenseInput2.png" alt=""></div></li><li>Remove <code>SixenseHandsController</code> script and add the parent transform with <code>PoseMover</code> for <code>Hand-Right</code> and <code>Hand-Left</code> to achieve no rotation shift of the <code>Transform</code> controlled by <code>PoseMover</code>, i.e. no rotation for the <code>Transform</code> controlled by <code>PoseMover</code> when the corresponding <code>VirtualPose</code> has no rotation. Meanwhile, set <code>localPosition</code> of <code>Hand-Right</code> and <code>Hand-Left</code> to <code>Vector3.zero</code>.<div align="center"><br><img src="imgs/HandsController.png" alt=""><br><img src="imgs/PoseMover.png" alt=""> <img src="imgs/PoseMover2.png" alt=""><br></div></li><li>Move the left and right pivots of <code>SixenseInput</code> that is compatible to <code>CrossInput</code> to where <code>PoseMover</code> is.<div align="center"><img src="imgs/CrossInput2.png" alt=""></div></li><li>Modify <code>SixenseHand.cs</code> to import <code>Ximmerse.CrossInput</code> namespace.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
+using Ximmerse.CrossInput;
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO</span>
+<span class="hljs-keyword">using</span> Ximmerse.CrossInput;
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre>
+</li><li>Replace <code>SixenseInput.Controller</code> in the script by <code>HandJoystick</code>.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
+     //public SixenseInput.Controller m_controller = null;
+     public HandJoystick m_controller;
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO</span>
+     <span class="hljs-comment">//public SixenseInput.Controller m_controller = null;</span>
+     <span class="hljs-keyword">public</span> HandJoystick m_controller;
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre>
+</li><li>Obtain <code>m_controller</code> from <code>HandJoystick.joysticks</code>, reference 0 for left hand and 1 for right hand.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
+             //m_controller = SixenseInput.GetController( m_hand );
+             m_controller = HandJoystick.joysticks( (int)m_hand-1 );
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO</span>
+             <span class="hljs-comment">//m_controller = SixenseInput.GetController( m_hand );</span>
+             m_controller = HandJoystick.joysticks( (<span class="hljs-keyword">int</span>)m_hand-<span class="hljs-number">1</span> );
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre>
+</li><li>When accessing input interface, replace the original <code>SixenseInput</code> function with the <code>HandJoystick</code> function of Unity style.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
+         //if ( m_controller.GetButton(SixenseButtons.ONE) ) {
+         if ( m_controller.GetButton(&quot;ONE&quot;) ) {
+             // do something
+         }
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO</span>
+         <span class="hljs-comment">//if ( m_controller.GetButton(SixenseButtons.ONE) ) {</span>
+         <span class="hljs-keyword">if</span> ( m_controller.GetButton(<span class="hljs-string">"ONE"</span>) ) {
+             <span class="hljs-comment">// do something</span>
+         }
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre>
+</li><li>Map trigger value to axes and buttons, i.e. <code>HandJoystick.GetAxis(triggerName)</code> and <code>HandJoystick.GetButton(triggerName)</code>.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
+         //float fTriggerVal = m_controller.Trigger;
+         float fTriggerVal = m_controller.GetAxis(&quot;TRIGGER&quot;);
+// TODO --&amp;gt;
+</code></pre>"><span class="hljs-comment">// &lt;!-- TODO</span>
+         <span class="hljs-comment">//float fTriggerVal = m_controller.Trigger;</span>
+         <span class="hljs-keyword">float</span> fTriggerVal = m_controller.GetAxis(<span class="hljs-string">"TRIGGER"</span>);
+<span class="hljs-comment">// TODO --&gt;</span>
+</code></pre>
+</li><li>Ensure that <code>triggerName</code> is not a constant. It should be consistent with the crossponding value of <code>Ximmerse.CrossInput.CrossInputManager</code>. It’s more convenient to obtain the information of given joystick from multiple ones by replacing the full key of <code>CrossInputManager</code> with short keys.</li></ol><hr class="page"><h2 id="7-developing-with-gear-vr"><a name="7-developing-with-gear-vr" href="#7-developing-with-gear-vr"></a>7 Developing with Gear VR</h2><h3 id="7.1-hardware-requirement"><a name="7.1-hardware-requirement" href="#7.1-hardware-requirement"></a>7.1 Hardware Requirement</h3><ol>
+<li>Ximmerse X-Hawk</li><li>Ximmerse X-Hawk USB Connector</li><li>Gear VR2</li><li>Samsung mobile phone: Galaxy S6<div align="center"><br><img src="imgs/GEAR_VR_connect.png" width="640"><br></div>
+
+</li></ol><h3 id="7.2-steps"><a name="7.2-steps" href="#7.2-steps"></a>7.2 Steps</h3><ol>
+<li><p>Enable developer mode in Galaxy S6. This can be done in <code>Settings</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-20-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-58" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-59"><span class="mo" id="MathJax-Span-60" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-20">\rightarrow</script></span> <code>Device</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-21-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-61" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-62"><span class="mo" id="MathJax-Span-63" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-21">\rightarrow</script></span> <code>Applications</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-22-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-64" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-65"><span class="mo" id="MathJax-Span-66" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-22">\rightarrow</script></span> <code>Application manager</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-23-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-67" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-68"><span class="mo" id="MathJax-Span-69" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-23">\rightarrow</script></span> <code>Gear AR Service</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-24-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-70" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-71"><span class="mo" id="MathJax-Span-72" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-24">\rightarrow</script></span> <code>Storage</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-25-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-73" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-74"><span class="mo" id="MathJax-Span-75" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-25">\rightarrow</script></span> <code>MANAGE STORAGE</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-26-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-76" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-77"><span class="mo" id="MathJax-Span-78" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-26">\rightarrow</script></span> <code>Developer</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-27-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-79" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-80"><span class="mo" id="MathJax-Span-81" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-27">\rightarrow</script></span> <code>Developer mode</code>.</p>
+<blockquote>
+<p>Tip: If you do not see the <code>Developer mode</code> option in <code>Gear AR Service</code>, tap <code>VR Server Version</code> at least 6 times. By re-entering the dialog, you will be able to see it.</p>
+</blockquote>
+ <div align="center"><img src="imgs/DeveloperMode.png" alt=""></div></li><li>Connect the X-Hawk’s USB port C to a power bank.</li><li>Connect the X-Hawk’s USB port A to the X-Hawk.</li><li><p>Connect the X-Hawk’s USB port B to the Galaxy S6. Wait until <code>Choose an app for the USB device</code> dialog pops up. Note that all the available apps that use Ximmerse’s SDK will be displayed here.</p>
+<div align="center"><img src="imgs/App.png" alt=""></div>
+
+<blockquote>
+<p>Tip: If the <code>Choose an app for the USB device</code> dialog does not pop up after a while,  you will need to clear the cache of the previous apps that use Ximmerse’s SDK. This can be done in <code>Settings</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-28-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-82" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-83"><span class="mo" id="MathJax-Span-84" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-28">\rightarrow</script></span> <code>Device</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-29-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-85" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-86"><span class="mo" id="MathJax-Span-87" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-29">\rightarrow</script></span> <code>Applications</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-30-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-88" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-89"><span class="mo" id="MathJax-Span-90" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-30">\rightarrow</script></span> <code>Default applications</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-31-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-91" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-92"><span class="mo" id="MathJax-Span-93" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-31">\rightarrow</script></span> <code>Clear defaults</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-32-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-94" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-95"><span class="mo" id="MathJax-Span-96" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-32">\rightarrow</script></span> <code>CLEAR</code>.</p>
+<div align="center"><img src="imgs/Clear.png" alt=""></div>
+</blockquote>
+</li><li><p>Choose any of the available apps to continue. Take <code>Ximmerse SDK 1.00</code> for example, select it and click the <code>ALWAYS</code> option to continue. You will be able to see the stereo camera demo running on the Galaxy S6.</p>
+<div align="center"><img src="imgs/App2.png" alt=""></div><br><div align="center"><img src="imgs/DualCamera.png" alt=""></div></li><li>Remove port B from the Galaxy S6 and connect it to the Gear VR.</li><li>Insert Galaxy S6 into Gear VR. You will be able to see the stereo camera demo running on the Galaxy S6.</li><li>You are now ready to enjoy VR on the Gear VR.</li></ol><blockquote>
+<p>Tip: If you want to switch to other apps, for example from <code>Ximmerse SDK 1.00</code> to <code>UsbListener</code>, you will also need to clear the cache of previous apps that used Ximmerse’s SDK as mentioned previously.</p>
+</blockquote>
+
+  </body>
+</html>
