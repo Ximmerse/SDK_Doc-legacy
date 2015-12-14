@@ -22,7 +22,8 @@
     <section class="main-content">
 <p></p>
 
-<div align="right"><img src="imgs/xim.png" alt=""></div><table>
+<div align="right"><img src="imgs/xim.png" alt=""></div>
+<table align="center">
 <tbody>
 <tr>
 <td>Document Status:</td>
@@ -45,7 +46,8 @@
 <td>YouSing Huang, Yongtao Hu, Jingwen Dai</td>
 </tr>
 </tbody>
-</table><hr class="underscore"><p>© 2015 XIMMERSE<br>All rights reserved</p><p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p><hr class="page"><p class="toc" style="undefined"></p>
+</table>
+<hr class="underscore"><p>© 2015 XIMMERSE<br>All rights reserved</p><p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p><hr class="page"><p class="toc" style="undefined"></p>
 <strong>Table of Content</strong>
 <ul>
 <li><span class="title">
@@ -304,8 +306,17 @@
 </li>
 </ul>
 </li>
+<li><span class="title">
+<a href="#8-misc" title="8 Misc">8 Misc</a>
+</span>
+<!--span class="number">
+34
+</span-->
+</li>
 </ul>
+</li>
 
+</ul>
 <p></p><h2 id="1-release-statement"><a name="1-release-statement" href="#1-release-statement"></a>1 Release Statement</h2><h3 id="1.1-foreword"><a name="1.1-foreword" href="#1.1-foreword"></a>1.1 Foreword</h3><p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). ---><br>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p><h3 id="1.2-test-environment"><a name="1.2-test-environment" href="#1.2-test-environment"></a>1.2 Test Environment</h3><ul>
 <li>Operating System (OS): Windows 7 PC</li><li>Unity3D Engine Version: Unity 5.1.3f1 (32-bit)</li></ul><h3 id="1.3-notes"><a name="1.3-notes" href="#1.3-notes"></a>1.3 Notes</h3><ol>
 <li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li><li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li><li>It is recommended to use Versions 5.X due to its support for VR.</li><li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li></ol><h3 id="1.4-technical-support"><a name="1.4-technical-support" href="#1.4-technical-support"></a>1.4 Technical Support</h3><p><!--- - Contact Person: Mr. Huang ---></p><ul>
@@ -768,12 +779,17 @@ using Ximmerse.CrossInput;
 </li><li><p>Choose any of the available apps to continue. Take <code>Ximmerse SDK 1.00</code> for example, select it and click the <code>ALWAYS</code> option to continue. You will be able to see the stereo camera demo running on the Galaxy S6.</p>
 <div align="center"><img src="imgs/App2.png" alt=""></div><br><div align="center"><img src="imgs/DualCamera.png" alt=""></div></li><li>Remove port B from the Galaxy S6 and connect it to the Gear VR.</li><li>Insert Galaxy S6 into Gear VR. You will be able to see the stereo camera demo running on the Galaxy S6.</li><li>You are now ready to enjoy VR on the Gear VR.</li></ol><blockquote>
 <p>Tip: If you want to switch to other apps, for example from <code>Ximmerse SDK 1.00</code> to <code>UsbListener</code>, you will also need to clear the cache of previous apps that used Ximmerse’s SDK as mentioned previously.</p>
+</blockquote><hr class="page"><h2 id="8-misc"><a name="8-misc" href="#8-misc"></a>8 Misc</h2><p>All required files can be downloaded from our <a href="https://github.com/Ximmerse/SDK">SDK github page</a>, including</p><ol>
+<li>Our SDK package: <kbd>Ximmerse SDK 1.0.unitypackage</kbd>.</li><li>IMU calibration tool: <kbd>IMU_cal_tool_V1.rar</kbd>.</li><li>Bluetooth USB Dongle: <kbd>Driver <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-42-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-123" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-124"><span class="mo" id="MathJax-Span-125" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-42">\rightarrow</script></span> CSR8510 Bluetooth USB Dongle.zip</kbd>.<blockquote>
+<p>Please install Bluetooth USB Dongle first, in order to successfully connect our joysticks or IMUs.</p>
 </blockquote>
+</li></ol>
+
 
 <!-- sites status -->
-<hr>
+<hr class="page">
 <div>
-  <span><i>&copy; 2015 <a href="http://www.ximmerse.com/">Xim Industry Inc.</a></i></span> <span style="float:right"><small><i>Last Updated on Dec. 1, 2015.</i></small></span>
+  <span><i>&copy; 2015 <a href="http://www.ximmerse.com/">Xim Industry Inc.</a></i></span> <span style="float:right"><small><i>Last Updated on Dec. 14, 2015.</i></small></span>
   <div align="center">
     <img src="imgs/xim.png" align="left" width="180" style="float:left" />
     <a href="http://www.clustrmaps.com/map/ximmerse.github.io/SDK_Doc/" title="">
