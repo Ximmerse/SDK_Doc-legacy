@@ -50,294 +50,287 @@
 <hr class="underscore"><p>© 2015 XIMMERSE<br>All rights reserved</p><p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p><hr class="page"><p class="toc" style="undefined"></p>
 <strong>Table of Content</strong>
 <ul>
-<li><span class="title">
-<a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
-</span>
-<!--span class="number">
-0
-</span-->
-<ul>
-<li><span class="title">
-<a href="#1.1-foreword" title="1.1 Foreword">1.1 Foreword</a>
-</span>
-<!--span class="number">
-1
-</span-->
-</li>
-<li><span class="title">
-<a href="#1.2-test-environment" title="1.2 Test Environment">1.2 Test Environment</a>
-</span>
-<!--span class="number">
-2
-</span-->
-</li>
-<li><span class="title">
-<a href="#1.3-notes" title="1.3 Notes">1.3 Notes</a>
-</span>
-<!--span class="number">
-3
-</span-->
-</li>
-<li><span class="title">
-<a href="#1.4-technical-support" title="1.4 Technical Support">1.4 Technical Support</a>
-</span>
-<!--span class="number">
-4
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
-</span>
-<!--span class="number">
-5
-</span-->
-<ul>
-<li><span class="title">
-<a href="#2.1-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a>
-</span>
-<!--span class="number">
-6
-</span-->
-</li>
-<li><span class="title">
-<a href="#2.2-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a>
-</span>
-<!--span class="number">
-7
-</span-->
-</li>
-<li><span class="title">
-<a href="#2.3-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
-</span>
-<!--span class="number">
-8
-</span-->
-<ul>
-<li><span class="title">
-<a href="#2.3.1-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a>
-</span>
-<!--span class="number">
-9
-</span-->
-</li>
-<li><span class="title">
-<a href="#2.3.2-ximmerse's-joystick-(x-cobra)" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a>
-</span>
-<!--span class="number">
-10
-</span-->
-</li>
-<li><span class="title">
-<a href="#about-config-files" title="About Config Files">About Config Files</a>
-</span>
-<!--span class="number">
-11
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#2.4-programming" title="2.4 Programming">2.4 Programming</a>
-</span>
-<!--span class="number">
-12
-</span-->
-<ul>
-<li><span class="title">
-<a href="#2.4.1-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a>
-</span>
-<!--span class="number">
-13
-</span-->
-</li>
-<li><span class="title">
-<a href="#2.4.2-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a>
-</span>
-<!--span class="number">
-14
-</span-->
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#3-`ximmerse.core`-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
-</span>
-<!--span class="number">
-15
-</span-->
-<ul>
-<li><span class="title">
-<a href="#3.1-overview" title="3.1 Overview">3.1 Overview</a>
-</span>
-<!--span class="number">
-16
-</span-->
-</li>
-<li><span class="title">
-<a href="#3.2-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a>
-</span>
-<!--span class="number">
-17
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#4-`ximmerse.crossinput`-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
-</span>
-<!--span class="number">
-18
-</span-->
-<ul>
-<li><span class="title">
-<a href="#4.1-overview" title="4.1 Overview">4.1 Overview</a>
-</span>
-<!--span class="number">
-19
-</span-->
-</li>
-<li><span class="title">
-<a href="#4.2-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
-</span>
-<!--span class="number">
-20
-</span-->
-<ul>
-<li><span class="title">
-<a href="#4.2.1-`crossinputmanager`" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a>
-</span>
-<!--span class="number">
-21
-</span-->
-</li>
-<li><span class="title">
-<a href="#4.2.2-`unityinput`" title="4.2.2 UnityInput">4.2.2 UnityInput</a>
-</span>
-<!--span class="number">
-22
-</span-->
-</li>
-<li><span class="title">
-<a href="#4.2.3-`handjoystick`" title="4.2.3 HandJoystick">4.2.3 HandJoystick</a>
-</span>
-<!--span class="number">
-23
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#4.3-extensions" title=" 4.3 Extensions"> 4.3 Extensions</a>
-</span>
-<!--span class="number">
-24
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a>
-</span>
-<!--span class="number">
-25
-</span-->
-</li>
-<li><span class="title">
-<a href="#6-samples" title="6 Samples">6 Samples</a>
-</span>
-<!--span class="number">
-26
-</span-->
-<ul>
-<li><span class="title">
-<a href="#6.1-`crossinputmanagergui`" title="6.1 CrossInputManagerGUI">6.1 CrossInputManagerGUI</a>
-</span>
-<!--span class="number">
-27
-</span-->
-</li>
-<li><span class="title">
-<a href="#6.2-`handcontroller`" title="6.2 HandController">6.2 HandController</a>
-</span>
-<!--span class="number">
-28
-</span-->
-</li>
-<li><span class="title">
-<a href="#6.3-`unitytoximmerse`" title="6.3 UnityToXimmerse">6.3 UnityToXimmerse</a>
-</span>
-<!--span class="number">
-29
-</span-->
-</li>
-<li><span class="title">
-<a href="#6.4-`hydratoximmerse`" title="6.4 HydraToXimmerse">6.4 HydraToXimmerse</a>
-</span>
-<!--span class="number">
-30
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#7-developing-with-gear-vr" title="7 Developing with Gear VR">7 Developing with Gear VR</a>
-</span>
-<!--span class="number">
-31
-</span-->
-<ul>
-<li><span class="title">
-<a href="#7.1-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a>
-</span>
-<!--span class="number">
-32
-</span-->
-</li>
-<li><span class="title">
-<a href="#7.2-steps" title="7.2 Steps">7.2 Steps</a>
-</span>
-<!--span class="number">
-33
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#8-developing-with-pc-(windows)" title="8 Developing with PC (Windows)">8 Developing with PC (Windows)</a>
-</span>
-<!--span class="number">
-34
-</span-->
-<ul>
-<li><span class="title">
-<a href="#8.1-hardware-requirement" title="8.1 Hardware Requirement">8.1 Hardware Requirement</a>
-</span>
-<!--span class="number">
-35
-</span-->
-</li>
-<li><span class="title">
-<a href="#8.2-steps" title="8.2 Steps">8.2 Steps</a>
-</span>
-<!--span class="number">
-36
-</span-->
-</li>
-</ul>
-</li>
-<li><span class="title">
-<a href="#9-misc." title="9 Misc.">9 Misc.</a>
-</span>
-<!--span class="number">
-37
-</span-->
-</li>
-</ul>
-</li>
+    <li><span class="title">
+    <a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
+    </span>
+    <!--span class="number">
+    0
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#1.1-foreword" title="1.1 Foreword">1.1 Foreword</a>
+    </span>
+    <!--span class="number">
+    1
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.2-test-environment" title="1.2 Test Environment">1.2 Test Environment</a>
+    </span>
+    <!--span class="number">
+    2
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.3-notes" title="1.3 Notes">1.3 Notes</a>
+    </span>
+    <!--span class="number">
+    3
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.4-technical-support" title="1.4 Technical Support">1.4 Technical Support</a>
+    </span>
+    <!--span class="number">
+    4
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
+    </span>
+    <!--span class="number">
+    5
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.1-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a>
+    </span>
+    <!--span class="number">
+    6
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.2-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a>
+    </span>
+    <!--span class="number">
+    7
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.3-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
+    </span>
+    <!--span class="number">
+    8
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.3.1-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a>
+    </span>
+    <!--span class="number">
+    9
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.3.2-ximmerse's-joystick-(x-cobra)" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a>
+    </span>
+    <!--span class="number">
+    10
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#about-config-files" title="About Config Files">About Config Files</a>
+    </span>
+    <!--span class="number">
+    11
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#2.4-programming" title="2.4 Programming">2.4 Programming</a>
+    </span>
+    <!--span class="number">
+    12
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.4.1-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a>
+    </span>
+    <!--span class="number">
+    13
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.4.2-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a>
+    </span>
+    <!--span class="number">
+    14
+    </span-->
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#3-`ximmerse.core`-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
+    </span>
+    <!--span class="number">
+    15
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#3.1-overview" title="3.1 Overview">3.1 Overview</a>
+    </span>
+    <!--span class="number">
+    16
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#3.2-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a>
+    </span>
+    <!--span class="number">
+    17
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#4-`ximmerse.crossinput`-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
+    </span>
+    <!--span class="number">
+    18
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#4.1-overview" title="4.1 Overview">4.1 Overview</a>
+    </span>
+    <!--span class="number">
+    19
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
+    </span>
+    <!--span class="number">
+    20
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#4.2.1-`crossinputmanager`" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a>
+    </span>
+    <!--span class="number">
+    21
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2.2-`unityinput`" title="4.2.2 UnityInput">4.2.2 UnityInput</a>
+    </span>
+    <!--span class="number">
+    22
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2.3-`handjoystick`" title="4.2.3 HandJoystick">4.2.3 HandJoystick</a>
+    </span>
+    <!--span class="number">
+    23
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#4.3-extensions" title=" 4.3 Extensions"> 4.3 Extensions</a>
+    </span>
+    <!--span class="number">
+    24
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a>
+    </span>
+    <!--span class="number">
+    25
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6-samples" title="6 Samples">6 Samples</a>
+    </span>
+    <!--span class="number">
+    26
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#6.1-`crossinputmanagergui`" title="6.1 CrossInputManagerGUI">6.1 CrossInputManagerGUI</a>
+    </span>
+    <!--span class="number">
+    27
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.2-`handcontroller`" title="6.2 HandController">6.2 HandController</a>
+    </span>
+    <!--span class="number">
+    28
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.3-`hydratoximmerse`" title="6.3 HydraToXimmerse">6.3 HydraToXimmerse</a>
+    </span>
+    <!--span class="number">
+    29
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#7-developing-with-gear-vr" title="7 Developing with Gear VR">7 Developing with Gear VR</a>
+    </span>
+    <!--span class="number">
+    30
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#7.1-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a>
+    </span>
+    <!--span class="number">
+    31
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#7.2-steps" title="7.2 Steps">7.2 Steps</a>
+    </span>
+    <!--span class="number">
+    32
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#8-developing-with-pc-(windows)" title="8 Developing with PC (Windows)">8 Developing with PC (Windows)</a>
+    </span>
+    <!--span class="number">
+    33
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#8.1-hardware-requirement" title="8.1 Hardware Requirement">8.1 Hardware Requirement</a>
+    </span>
+    <!--span class="number">
+    34
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#8.2-steps" title="8.2 Steps">8.2 Steps</a>
+    </span>
+    <!--span class="number">
+    35
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#9-misc." title="9 Misc.">9 Misc.</a>
+    </span>
+    <!--span class="number">
+    36
+    </span-->
+    </li>
+    </ul>
+    </li>
 
 </ul>
 <p></p><h2 id="1-release-statement"><a name="1-release-statement" href="#1-release-statement"></a>1 Release Statement</h2><h3 id="1.1-foreword"><a name="1.1-foreword" href="#1.1-foreword"></a>1.1 Foreword</h3><p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). ---><br>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p><h3 id="1.2-test-environment"><a name="1.2-test-environment" href="#1.2-test-environment"></a>1.2 Test Environment</h3><ul>
