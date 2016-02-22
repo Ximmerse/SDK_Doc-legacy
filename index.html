@@ -51,359 +51,373 @@
 <li>02/21/2016: SDK v2.0 released. Support Google Cardboard.</li><li>01/23/2016: Support Windows 10.</li><li>12/30/2015: Native C++ SDK is released.</li><li>12/16/2015: Add “Developing with PC (Windows)” chapter.</li><li>12/01/2015: SDK v1.0 released.</li></ul><hr class="page"><p class="toc" style="undefined"></p>
 <strong>Table of Content</strong>
 <ul>
-  <li><span class="title">
-  <a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
-  </span>
-  <!--span class="number">
-  0
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#1.1-foreword" title="1.1 Foreword">1.1 Foreword</a>
-  </span>
-  <!--span class="number">
-  1
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#1.2-development-overview" title="1.2 Development Overview">1.2 Development Overview</a>
-  </span>
-  <!--span class="number">
-  2
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#1.3-test-environment" title="1.3 Test Environment">1.3 Test Environment</a>
-  </span>
-  <!--span class="number">
-  3
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#1.4-notes" title="1.4 Notes">1.4 Notes</a>
-  </span>
-  <!--span class="number">
-  4
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#1.5-technical-support" title="1.5 Technical Support">1.5 Technical Support</a>
-  </span>
-  <!--span class="number">
-  5
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
-  </span>
-  <!--span class="number">
-  6
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#2.1-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a>
-  </span>
-  <!--span class="number">
-  7
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#2.2-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a>
-  </span>
-  <!--span class="number">
-  8
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#2.3-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
-  </span>
-  <!--span class="number">
-  9
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#2.3.1-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a>
-  </span>
-  <!--span class="number">
-  10
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#2.3.2-ximmerse's-joystick-(x-cobra)" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a>
-  </span>
-  <!--span class="number">
-  11
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#about-config-files" title="About Config Files">About Config Files</a>
-  </span>
-  <!--span class="number">
-  12
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#2.4-programming" title="2.4 Programming">2.4 Programming</a>
-  </span>
-  <!--span class="number">
-  13
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#2.4.1-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a>
-  </span>
-  <!--span class="number">
-  14
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#2.4.2-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a>
-  </span>
-  <!--span class="number">
-  15
-  </span-->
-  </li>
-  </ul>
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#3-`ximmerse.core`-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
-  </span>
-  <!--span class="number">
-  16
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#3.1-overview" title="3.1 Overview">3.1 Overview</a>
-  </span>
-  <!--span class="number">
-  17
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#3.2-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a>
-  </span>
-  <!--span class="number">
-  18
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#4-`ximmerse.crossinput`-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
-  </span>
-  <!--span class="number">
-  19
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#4.1-overview" title="4.1 Overview">4.1 Overview</a>
-  </span>
-  <!--span class="number">
-  20
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#4.2-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
-  </span>
-  <!--span class="number">
-  21
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#4.2.1-`crossinputmanager`" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a>
-  </span>
-  <!--span class="number">
-  22
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#4.2.2-`unityinput`" title="4.2.2 UnityInput">4.2.2 UnityInput</a>
-  </span>
-  <!--span class="number">
-  23
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#4.2.3-`virtualcontroller`" title="4.2.3 VirtualController">4.2.3 VirtualController</a>
-  </span>
-  <!--span class="number">
-  24
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#4.3-extensions" title=" 4.3 Extensions"> 4.3 Extensions</a>
-  </span>
-  <!--span class="number">
-  25
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a>
-  </span>
-  <!--span class="number">
-  26
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#6-samples" title="6 Samples">6 Samples</a>
-  </span>
-  <!--span class="number">
-  27
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#6.1-`crossinputmanagergui`" title="6.1 CrossInputManagerGUI">6.1 CrossInputManagerGUI</a>
-  </span>
-  <!--span class="number">
-  28
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#6.1.1-`inputtest-(x-hawk)`" title="6.1.1 InputTest (X-Hawk)">6.1.1 InputTest (X-Hawk)</a>
-  </span>
-  <!--span class="number">
-  29
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#6.1.2-`inputtest-(x-cobra)`" title=" 6.1.2 InputTest (X-Cobra)"> 6.1.2 InputTest (X-Cobra)</a>
-  </span>
-  <!--span class="number">
-  30
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#6.1.3-`inputtest-(x-swift)`" title=" 6.1.3 InputTest (X-Swift)"> 6.1.3 InputTest (X-Swift)</a>
-  </span>
-  <!--span class="number">
-  31
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#6.2-`handcontroller`" title="6.2 HandController">6.2 HandController</a>
-  </span>
-  <!--span class="number">
-  32
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#6.3-`hydratoximmerse`" title="6.3 HydraToXimmerse">6.3 HydraToXimmerse</a>
-  </span>
-  <!--span class="number">
-  33
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#7-developing-with-gear-vr" title=" 7 Developing with Gear VR"> 7 Developing with Gear VR</a>
-  </span>
-  <!--span class="number">
-  34
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#7.1-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a>
-  </span>
-  <!--span class="number">
-  35
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#7.2-steps" title="7.2 Steps">7.2 Steps</a>
-  </span>
-  <!--span class="number">
-  36
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#8-developing-with-pc-(windows)" title=" 8 Developing with PC (Windows)"> 8 Developing with PC (Windows)</a>
-  </span>
-  <!--span class="number">
-  37
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#8.1-hardware-requirement" title="8.1 Hardware Requirement">8.1 Hardware Requirement</a>
-  </span>
-  <!--span class="number">
-  38
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#8.2-steps" title="8.2 Steps">8.2 Steps</a>
-  </span>
-  <!--span class="number">
-  39
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#9-developing-with-google-cardboard" title=" 9 Developing with Google Cardboard"> 9 Developing with Google Cardboard</a>
-  </span>
-  <!--span class="number">
-  40
-  </span-->
-  <ul>
-  <li><span class="title">
-  <a href="#9.1-sdk-environment-setup" title=" 9.1 SDK Environment Setup"> 9.1 SDK Environment Setup</a>
-  </span>
-  <!--span class="number">
-  41
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#9.2-build-apk" title="9.2 Build APK">9.2 Build APK</a>
-  </span>
-  <!--span class="number">
-  42
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#9.3-run-apk" title="9.3 Run APK">9.3 Run APK</a>
-  </span>
-  <!--span class="number">
-  43
-  </span-->
-  </li>
-  <li><span class="title">
-  <a href="#9.4-connect-ximmerse-devices-via-bluetooth-in-android" title="9.4 Connect Ximmerse Devices via Bluetooth in Android">9.4 Connect Ximmerse Devices via Bluetooth in Android</a>
-  </span>
-  <!--span class="number">
-  44
-  </span-->
-  </li>
-  </ul>
-  </li>
-  <li><span class="title">
-  <a href="#10-sdk-file-structure" title="10 SDK File Structure">10 SDK File Structure</a>
-  </span>
-  <!--span class="number">
-  45
-  </span-->
-  </li>
+    <li><span class="title">
+    <a href="#1-release-statement" title="1 Release Statement">1 Release Statement</a>
+    </span>
+    <!--span class="number">
+    0
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#1.1-foreword" title="1.1 Foreword">1.1 Foreword</a>
+    </span>
+    <!--span class="number">
+    1
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.2-development-overview" title="1.2 Development Overview">1.2 Development Overview</a>
+    </span>
+    <!--span class="number">
+    2
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.3-test-environment" title="1.3 Test Environment">1.3 Test Environment</a>
+    </span>
+    <!--span class="number">
+    3
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.4-notes" title="1.4 Notes">1.4 Notes</a>
+    </span>
+    <!--span class="number">
+    4
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#1.5-technical-support" title="1.5 Technical Support">1.5 Technical Support</a>
+    </span>
+    <!--span class="number">
+    5
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#2-sdk-setup" title="2 SDK Setup">2 SDK Setup</a>
+    </span>
+    <!--span class="number">
+    6
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.1-import-resource-package" title="2.1 Import Resource Package">2.1 Import Resource Package</a>
+    </span>
+    <!--span class="number">
+    7
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.2-setup-ximmerse-sdk-under-unity-vr" title="2.2 Setup Ximmerse SDK under Unity VR">2.2 Setup Ximmerse SDK under Unity VR</a>
+    </span>
+    <!--span class="number">
+    8
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.3-input-setup-for-ximmerse-hardwares" title="2.3 Input Setup for Ximmerse Hardwares">2.3 Input Setup for Ximmerse Hardwares</a>
+    </span>
+    <!--span class="number">
+    9
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.3.1-stereo-camera-component" title="2.3.1 Stereo Camera Component">2.3.1 Stereo Camera Component</a>
+    </span>
+    <!--span class="number">
+    10
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.3.2-ximmerse's-joystick-(x-cobra)" title="2.3.2 Ximmerse’s Joystick (X-COBRA)">2.3.2 Ximmerse’s Joystick (X-COBRA)</a>
+    </span>
+    <!--span class="number">
+    11
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#about-config-files" title="About Config Files">About Config Files</a>
+    </span>
+    <!--span class="number">
+    12
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#2.4-programming" title="2.4 Programming">2.4 Programming</a>
+    </span>
+    <!--span class="number">
+    13
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#2.4.1-access-axes-and-buttons" title="2.4.1 Access Axes and Buttons">2.4.1 Access Axes and Buttons</a>
+    </span>
+    <!--span class="number">
+    14
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#2.4.2-access-position-and-rotation" title="2.4.2 Access Position and Rotation">2.4.2 Access Position and Rotation</a>
+    </span>
+    <!--span class="number">
+    15
+    </span-->
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#3-`ximmerse.core`-namespace" title="3 Ximmerse.Core Namespace">3 Ximmerse.Core Namespace</a>
+    </span>
+    <!--span class="number">
+    16
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#3.1-overview" title="3.1 Overview">3.1 Overview</a>
+    </span>
+    <!--span class="number">
+    17
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#3.2-brief-introduction" title="3.2 Brief Introduction">3.2 Brief Introduction</a>
+    </span>
+    <!--span class="number">
+    18
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#4-`ximmerse.crossinput`-namespace" title="4 Ximmerse.CrossInput Namespace">4 Ximmerse.CrossInput Namespace</a>
+    </span>
+    <!--span class="number">
+    19
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#4.1-overview" title="4.1 Overview">4.1 Overview</a>
+    </span>
+    <!--span class="number">
+    20
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2-selected-classes-introduction" title="4.2 Selected Classes Introduction">4.2 Selected Classes Introduction</a>
+    </span>
+    <!--span class="number">
+    21
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#4.2.1-`crossinputmanager`" title="4.2.1 CrossInputManager">4.2.1 CrossInputManager</a>
+    </span>
+    <!--span class="number">
+    22
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2.2-`unityinput`" title="4.2.2 UnityInput">4.2.2 UnityInput</a>
+    </span>
+    <!--span class="number">
+    23
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#4.2.3-`virtualcontroller`" title="4.2.3 VirtualController">4.2.3 VirtualController</a>
+    </span>
+    <!--span class="number">
+    24
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#4.3-extensions" title=" 4.3 Extensions"> 4.3 Extensions</a>
+    </span>
+    <!--span class="number">
+    25
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#5-other-namespaces" title="5 Other Namespaces">5 Other Namespaces</a>
+    </span>
+    <!--span class="number">
+    26
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6-samples" title="6 Samples">6 Samples</a>
+    </span>
+    <!--span class="number">
+    27
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#6.1-`crossinputmanager-gui`" title="6.1 CrossInputManager GUI">6.1 CrossInputManager GUI</a>
+    </span>
+    <!--span class="number">
+    28
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#6.1.1-`inputtest-(x-hawk)`" title=" 6.1.1 InputTest (X-Hawk)"> 6.1.1 InputTest (X-Hawk)</a>
+    </span>
+    <!--span class="number">
+    29
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.1.2-`inputtest-(x-hawk-sdk)`" title="6.1.2 InputTest (X-Hawk SDK)">6.1.2 InputTest (X-Hawk SDK)</a>
+    </span>
+    <!--span class="number">
+    30
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.1.3-`inputtest-(x-cobra)`" title=" 6.1.3 InputTest (X-Cobra)"> 6.1.3 InputTest (X-Cobra)</a>
+    </span>
+    <!--span class="number">
+    31
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.1.4-`inputtest-(x-swift)`" title=" 6.1.4 InputTest (X-Swift)"> 6.1.4 InputTest (X-Swift)</a>
+    </span>
+    <!--span class="number">
+    32
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#6.2-`handcontroller`" title="6.2 HandController">6.2 HandController</a>
+    </span>
+    <!--span class="number">
+    33
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.3`cardboard-test`" title="6.3Cardboard Test">6.3Cardboard Test</a>
+    </span>
+    <!--span class="number">
+    34
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#6.4-`hydratoximmerse`" title="6.4 HydraToXimmerse">6.4 HydraToXimmerse</a>
+    </span>
+    <!--span class="number">
+    35
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#7-developing-with-gear-vr" title=" 7 Developing with Gear VR"> 7 Developing with Gear VR</a>
+    </span>
+    <!--span class="number">
+    36
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#7.1-hardware-requirement" title="7.1 Hardware Requirement">7.1 Hardware Requirement</a>
+    </span>
+    <!--span class="number">
+    37
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#7.2-steps" title="7.2 Steps">7.2 Steps</a>
+    </span>
+    <!--span class="number">
+    38
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#8-developing-with-pc-(windows)" title=" 8 Developing with PC (Windows)"> 8 Developing with PC (Windows)</a>
+    </span>
+    <!--span class="number">
+    39
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#8.1-hardware-requirement" title="8.1 Hardware Requirement">8.1 Hardware Requirement</a>
+    </span>
+    <!--span class="number">
+    40
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#8.2-steps" title="8.2 Steps">8.2 Steps</a>
+    </span>
+    <!--span class="number">
+    41
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#9-developing-with-google-cardboard" title=" 9 Developing with Google Cardboard"> 9 Developing with Google Cardboard</a>
+    </span>
+    <!--span class="number">
+    42
+    </span-->
+    <ul>
+    <li><span class="title">
+    <a href="#9.1-sdk-environment-setup" title=" 9.1 SDK Environment Setup"> 9.1 SDK Environment Setup</a>
+    </span>
+    <!--span class="number">
+    43
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#9.2-build-apk" title="9.2 Build APK">9.2 Build APK</a>
+    </span>
+    <!--span class="number">
+    44
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#9.3-run-apk" title="9.3 Run APK">9.3 Run APK</a>
+    </span>
+    <!--span class="number">
+    45
+    </span-->
+    </li>
+    <li><span class="title">
+    <a href="#9.4-connect-ximmerse-devices-via-bluetooth-in-android" title="9.4 Connect Ximmerse Devices via Bluetooth in Android">9.4 Connect Ximmerse Devices via Bluetooth in Android</a>
+    </span>
+    <!--span class="number">
+    46
+    </span-->
+    </li>
+    </ul>
+    </li>
+    <li><span class="title">
+    <a href="#10-misc." title="10 Misc.">10 Misc.</a>
+    </span>
+    <!--span class="number">
+    47
+    </span-->
+    </li>
     </ul>
     </li>
 </ul>
 <p></p><h2 id="1-release-statement"><a name="1-release-statement" href="#1-release-statement"></a>1 Release Statement</h2><h3 id="1.1-foreword"><a name="1.1-foreword" href="#1.1-foreword"></a>1.1 Foreword</h3><p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). ---><br>This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p><h3 id="1.2-development-overview"><a name="1.2-development-overview" href="#1.2-development-overview"></a>1.2 Development Overview</h3><blockquote>
 <p>Please check the <a href="https://www.youtube.com/watch?v=VZ33MuYHGzU">Open Box Test Video</a> to make sure the X-Hawk and X-Cobra work properly. More demos and tools for validating our devices can be found <a href="#tools">here</a>.</p>
 </blockquote><ol>
-<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>Gear VR</kbd><br> Please refer to <a href="#anchor-develop-with-gear-vr">7 Developing with Gear VR</a> of this Doc for details.</li><li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Unity<br> Please refer to <a href="#anchor-develop-with-pc">8 Developing with PC (Windows)</a> of this Doc for details.</li><li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Native C++<br> Please refer to <a href="https://github.com/Ximmerse/SDK/blob/master/Native%20C%2B%2B">here</a> for details.</li><li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Bluetooth USB Adapter</kbd> + <kbd>PC</kbd> with Unity<br> Please refer to <a href="#anchor-inputtest-cobra">6.1.2 InputTest (X-Cobra)</a> and <a href="#anchor-inputtest-swift">6.1.3 InputTest (X-Swift)</a> of this Doc for details.</li><li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Bluetooth USB Adapter</kbd> + <kbd>Google Cardboard</kbd><br> Please refer to <a href="#anchor-cardboard">9 Developing with Google Cardboard</a> for details.</li></ol><h3 id="1.3-test-environment"><a name="1.3-test-environment" href="#1.3-test-environment"></a>1.3 Test Environment</h3><ul>
+<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>Gear VR</kbd><br> Please refer to <a href="#anchor-develop-with-gear-vr">7 Developing with Gear VR</a> of this Doc for details.</li><li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Unity<br> Please refer to <a href="#anchor-develop-with-pc">8 Developing with PC (Windows)</a> of this Doc for details.</li><li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Native C++<br> Please refer to <a href="https://github.com/Ximmerse/SDK/blob/master/Native%20C%2B%2B">here</a> for details.</li><li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Bluetooth USB Adapter</kbd> + <kbd>PC</kbd> with Unity<br> Please refer to <a href="#anchor-inputtest-cobra">6.1.3 InputTest (X-Cobra)</a> and <a href="#anchor-inputtest-swift">6.1.4 InputTest (X-Swift)</a> of this Doc for details.</li><li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Bluetooth USB Adapter</kbd> + <kbd>Google Cardboard</kbd><br> Please refer to <a href="#anchor-cardboard">9 Developing with Google Cardboard</a> for details.</li></ol><h3 id="1.3-test-environment"><a name="1.3-test-environment" href="#1.3-test-environment"></a>1.3 Test Environment</h3><ul>
 <li>Operating System (OS): Windows 7/8/10 PC</li><li>Unity3D Engine: Unity v5.1.3f1 (32-bit)</li></ul><h3 id="1.4-notes"><a name="1.4-notes" href="#1.4-notes"></a>1.4 Notes</h3><ol>
 <li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li><li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li><li>It is recommended to use Versions 5.X due to its support for VR.</li><li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li></ol><h3 id="1.5-technical-support"><a name="1.5-technical-support" href="#1.5-technical-support"></a>1.5 Technical Support</h3><ul>
 <li>Email: <a href="mailto:support@ximmerse.com">support@ximmerse.com</a></li></ul><hr class="page"><h2 id="2-sdk-setup"><a name="2-sdk-setup" href="#2-sdk-setup"></a>2 SDK Setup</h2><h3 id="2.1-import-resource-package"><a name="2.1-import-resource-package" href="#2.1-import-resource-package"></a>2.1 Import Resource Package</h3><ol>
@@ -791,7 +805,7 @@ joysticks[<span class="hljs-number">1</span>].GetButtonDown(<span class="hljs-st
 <li>Input cache refers to the list of <code>VirtualAxis</code>, <code>VirtualButton</code> and <code>VirtualPose</code> of <code>CrossInputManager</code>.</li><li>Input frame refers to the time stamp when the program reads the input (<code>MonoBehaviour.Update()</code>).</li></ol><p>In order to run in <code>Ximmerse.CrossInput</code>, it only needs to implement the <code>MonoBehaviour</code> of <code>IInputSource</code>‘s interface and add it to the property source list of <code>CrossInputManager</code>.</p><p>Similarly, Razer’s Hydra can also be used due to its compatibility with <code>Ximmerse.CrossInput</code> by adding its SDK <code>SixenseUnityPlugin</code> to the project and compatible scipt <code>Sixense Input.cs</code> to <code>CrossInputManager</code>.</p><div align="center"><img src="imgs/SixenseInput.png" alt=""></div><hr class="page"><h2 id="5-other-namespaces"><a name="5-other-namespaces" href="#5-other-namespaces"></a>5 Other Namespaces</h2><p>Some scripts belong to the Utility class. Demos are available for them where you can edit to fit your needs. Some namespaces belong to low level encapsulation of the SDK which in general cases, will not be used in project development.<br>There are some other namespaces in this SDK, including:</p><ul>
 <li><code>Ximmerse.Animation</code>: for easy implementation of animation solutions, like <code>HandAnimator</code>.</li><li><code>Ximmerse.IO</code>: for IO Stream under Windows and Android and encapsulation of IO tools class.</li><li><code>Ximmerse.UI</code>: for extension of UGUI and the compatible solution of traditional UI and VR UI.</li></ul><hr class="page"><h2 id="6-samples"><a name="6-samples" href="#6-samples"></a>6 Samples</h2><blockquote>
 <p>Note: all samples can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/</code>.</p>
-</blockquote><h3 id="6.1-`crossinputmanagergui`"><a name="6.1-`crossinputmanagergui`" href="#6.1-`crossinputmanagergui`"></a>6.1 <code>CrossInputManagerGUI</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/InputTest</code>, which further contains three samples, i.e. <code>InputTest (X-Hawk)</code>, <code>InputTest (X-Cobra)</code> and <code>InputTest (X-Swift)</code>.</p><h4 id="6.1.1-`inputtest-(x-hawk)`"><a name="6.1.1-`inputtest-(x-hawk)`" href="#6.1.1-`inputtest-(x-hawk)`"></a>6.1.1 <code>InputTest (X-Hawk)</code></h4><p>This sample demonstrates how to obtain the detailed X-Cobra’s information (including position, rotation, axis, trigger and buttons, etc.) through X-Hawk. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.1 InputTest (X-Hawk)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XHawk.png" alt=""></div><h4 id="6.1.2-`inputtest-(x-cobra)`"><a name="6.1.2-`inputtest-(x-cobra)`" href="#6.1.2-`inputtest-(x-cobra)`"></a><a name="anchor-inputtest-cobra"></a> 6.1.2 <code>InputTest (X-Cobra)</code></h4><p>This sample demonstrates how to obtain the detailed X-Cobra’s information (including rotation, axis, trigger and buttons, etc.) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.2 InputTest (X-Cobra)</a> (steps 1-4) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XCobra.png" alt=""></div><h4 id="6.1.3-`inputtest-(x-swift)`"><a name="6.1.3-`inputtest-(x-swift)`" href="#6.1.3-`inputtest-(x-swift)`"></a><a name="anchor-inputtest-swift"></a> 6.1.3 <code>InputTest (X-Swift)</code></h4><p>This sample demonstrates how to obtain the detailed X-Swift’s information (i.e. rotation) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.3 InputTest (X-Swift)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XSwift.png" alt=""></div><h3 id="6.2-`handcontroller`"><a name="6.2-`handcontroller`" href="#6.2-`handcontroller`"></a>6.2 <code>HandController</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/InputTest/Examples</code>, which demonstrates how to obtain the <code>VirtualPose</code> and how to control hand stretches using the trigger value.</p><div align="center"><img src="imgs/hand.png" alt=""></div><h3 id="6.3-`hydratoximmerse`"><a name="6.3-`hydratoximmerse`" href="#6.3-`hydratoximmerse`"></a>6.3 <code>HydraToXimmerse</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/InputTest/Other Examples</code>, which demonstrates how to quickly transfer a Razer’s Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p><p>If <code>SixenseHands</code> of <code>SixenseInput SDK</code> is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight.png" alt=""></div><p>If <code>HydraToXimmerse</code> of this SDK is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight2.png" alt=""></div><ol>
+</blockquote><h3 id="6.1-`crossinputmanager-gui`"><a name="6.1-`crossinputmanager-gui`" href="#6.1-`crossinputmanager-gui`"></a>6.1 <code>CrossInputManager GUI</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/InputTest</code>, which further contains three samples, i.e. <code>InputTest (X-Hawk)</code>, <code>InputTest (X-Cobra)</code> and <code>InputTest (X-Swift)</code>.</p><h4 id="6.1.1-`inputtest-(x-hawk)`"><a name="6.1.1-`inputtest-(x-hawk)`" href="#6.1.1-`inputtest-(x-hawk)`"></a><a name="anchor-inputtest-hawk"></a> 6.1.1 <code>InputTest (X-Hawk)</code></h4><p>This sample demonstrates how to obtain the detailed X-Cobra’s information (including position, rotation, axis, trigger and buttons, etc.) through X-Hawk. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.1 InputTest (X-Hawk)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XHawk.png" alt=""></div><h4 id="6.1.2-`inputtest-(x-hawk-sdk)`"><a name="6.1.2-`inputtest-(x-hawk-sdk)`" href="#6.1.2-`inputtest-(x-hawk-sdk)`"></a>6.1.2 <code>InputTest (X-Hawk SDK)</code></h4><p>Similar to <code>InputTest (X-Hawk)</code>, this sample also demonstrates how to obtain the detailed X-Cobra’s information (including position, rotation, axis, trigger and buttons, etc.) through X-Hawk, but shows them in plain text format. Setup steps are same to <a href="#anchor-inputtest-hawk">6.1.1 InputTest (X-Hawk)</a>.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XHawkSDK.png" alt=""></div><h4 id="6.1.3-`inputtest-(x-cobra)`"><a name="6.1.3-`inputtest-(x-cobra)`" href="#6.1.3-`inputtest-(x-cobra)`"></a><a name="anchor-inputtest-cobra"></a> 6.1.3 <code>InputTest (X-Cobra)</code></h4><p>This sample demonstrates how to obtain the detailed X-Cobra’s information (including rotation, axis, trigger and buttons, etc.) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.2 InputTest (X-Cobra)</a> (steps 1-4) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XCobra.png" alt=""></div><h4 id="6.1.4-`inputtest-(x-swift)`"><a name="6.1.4-`inputtest-(x-swift)`" href="#6.1.4-`inputtest-(x-swift)`"></a><a name="anchor-inputtest-swift"></a> 6.1.4 <code>InputTest (X-Swift)</code></h4><p>This sample demonstrates how to obtain the detailed X-Swift’s information (i.e. rotation) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.3 InputTest (X-Swift)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p><div align="center"><img src="imgs/CrossInputManagerGUI_XSwift.png" alt=""></div><h3 id="6.2-`handcontroller`"><a name="6.2-`handcontroller`" href="#6.2-`handcontroller`"></a>6.2 <code>HandController</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Examples</code>, which demonstrates how to obtain the <code>VirtualPose</code> and how to control hand stretches using the trigger value.</p><div align="center"><img src="imgs/hand.png" alt=""></div><h3 id="6.3`cardboard-test`"><a name="6.3`cardboard-test`" href="#6.3`cardboard-test`"></a>6.3<code>Cardboard Test</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Examples</code>, which demonstrates how to visualize X-Cobra’s real-time status for Cardboard development. Setup steps are same to <a href="#anchor-inputtest-hawk">6.1.1 InputTest (X-Hawk)</a>.</p><div align="center"><img src="imgs/CardboardTest.png" alt=""></div><h3 id="6.4-`hydratoximmerse`"><a name="6.4-`hydratoximmerse`" href="#6.4-`hydratoximmerse`"></a>6.4 <code>HydraToXimmerse</code></h3><p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Other Examples</code>, which demonstrates how to quickly transfer a Razer’s Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p><p>If <code>SixenseHands</code> of <code>SixenseInput SDK</code> is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight.png" alt=""></div><p>If <code>HydraToXimmerse</code> of this SDK is used in this sample, the hierarchy will be</p><div align="center"><img src="imgs/DirectionalLight2.png" alt=""></div><ol>
 <li>First remove the original <code>SixenseInput</code> and add the preset object of <code>CrossInputManager</code> then, check the <code>As Hand Joystick</code> checkbox of the compatible <code>CrossInput</code>‘s <code>SixenseInput</code>, <code>VirtualController</code> thus will create two joystick accessors automatically.<div align="center"><img src="imgs/SixenseInput2.png" alt=""></div></li><li>Remove <code>SixenseHandsController</code> script and add the parent transform with <code>PoseMover</code> for <code>Hand-Right</code> and <code>Hand-Left</code> to achieve no rotation shift of the <code>Transform</code> controlled by <code>PoseMover</code>, i.e. no rotation for the <code>Transform</code> controlled by <code>PoseMover</code> when the corresponding <code>VirtualPose</code> has no rotation. Meanwhile, set <code>localPosition</code> of <code>Hand-Right</code> and <code>Hand-Left</code> to <code>Vector3.zero</code>.<div align="center"><br><img src="imgs/HandsController.png" alt=""><br><img src="imgs/PoseMover.png" alt=""> <img src="imgs/PoseMover2.png" alt=""><br></div></li><li>Move the left and right pivots of <code>SixenseInput</code> that is compatible to <code>CrossInput</code> to where <code>PoseMover</code> is.<div align="center"><img src="imgs/CrossInput2.png" alt=""></div></li><li>Modify <code>SixenseHand.cs</code> to import <code>Ximmerse.CrossInput</code> namespace.<pre class="cpp hljs"><code class="cpp" data-origin="<pre><code class=&quot;cpp&quot;>// &amp;lt;!-- TODO
 using Ximmerse.CrossInput;
 // TODO --&amp;gt;
@@ -921,7 +935,7 @@ int sixenseSetButtonRemap(int* buttons);
 </li></ol>
 </li></ol><hr class="page"><h2 id="9-developing-with-google-cardboard"><a name="9-developing-with-google-cardboard" href="#9-developing-with-google-cardboard"></a><a name="anchor-cardboard"></a> 9 Developing with Google Cardboard</h2><h3 id="9.1-sdk-environment-setup"><a name="9.1-sdk-environment-setup" href="#9.1-sdk-environment-setup"></a><a name="anchor-cardboard-setup"></a> 9.1 SDK Environment Setup</h3><ol>
 <li>Create an empty Unity project.</li><li>Import Cardboard SDK for Unity package <code>CardboardSDKForUnity.unitypackage</code> (can be downloaded from <a href="https://github.com/googlesamples/cardboard-unity/raw/master/CardboardSDKForUnity.unitypackage">here</a>) and Ximmerse SDK 2.0 <code>Ximmerse SDK 2.0.unitypackage</code> to the project. <div align="center"><br> <img src="imgs/ImportXimAndCardboardSDK.png" width="400"><br> </div></li><li>In <code>File</code> menu <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-40-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-118" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-119"><span class="mo" id="MathJax-Span-120" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-40">\rightarrow</script></span> <code>Build Settings...</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-41-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-121" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-122"><span class="mo" id="MathJax-Span-123" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-41">\rightarrow</script></span> <code>Player Settings...</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-42-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-124" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-125"><span class="mo" id="MathJax-Span-126" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-42">\rightarrow</script></span> <code>Settings for PC, Mac &amp; Linux Standalone</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-43-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-127" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-128"><span class="mo" id="MathJax-Span-129" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-43">\rightarrow</script></span> <code>Other Settings</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-44-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-130" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-131"><span class="mo" id="MathJax-Span-132" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-44">\rightarrow</script></span> <code>Configuration</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-45-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-133" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-134"><span class="mo" id="MathJax-Span-135" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-45">\rightarrow</script></span> <code>Scripting Define Symbols</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-46-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-136" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-137"><span class="mo" id="MathJax-Span-138" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-46">\rightarrow</script></span> add compilation flag <code>CARDBOARD_SDK</code>. <div align="center"><br> <img src="imgs/AddCardboardSDKFlag.png"><br> </div></li><li>In Unity project folder <code>$(ProjectDir)</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-47-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-139" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-140"><span class="mo" id="MathJax-Span-141" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-47">\rightarrow</script></span> <code>Assets</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-48-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-142" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-143"><span class="mo" id="MathJax-Span-144" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-48">\rightarrow</script></span> <code>Plugins</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-49-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-145" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-146"><span class="mo" id="MathJax-Span-147" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-49">\rightarrow</script></span> <code>Android</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-50-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-148" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-149"><span class="mo" id="MathJax-Span-150" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-50">\rightarrow</script></span> delete file <code>AndroidManifest.xml</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-51-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-151" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-152"><span class="mo" id="MathJax-Span-153" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-51">\rightarrow</script></span> rename file <code>AndroidManifest_Cardboard.xml</code> to <code>AndroidManifest.xml</code>.</li></ol><h3 id="9.2-build-apk"><a name="9.2-build-apk" href="#9.2-build-apk"></a>9.2 Build APK</h3><p>Note: we will take how to build demo APK <code>CardboardTest.apk</code> as an example.</p><ol>
-<li>Setup SDK environment as described <a href="#anchor-cardboard-setup">above</a>.</li><li>Delete the default game object <code>Main Camera</code> from the scene.</li><li>Menu <code>GameObject</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-52-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-154" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-155"><span class="mo" id="MathJax-Span-156" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-52">\rightarrow</script></span> <code>Create Empty</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-53-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-157" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-158"><span class="mo" id="MathJax-Span-159" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-53">\rightarrow</script></span> rename it to <code>Main Camera</code>.</li><li>Drag both <code>Assets\Cardboard\Prefabs\CardboardMain.prefab</code> and <code>Assets\Ximmerse SDK\Prefabs\Input\_CrossInput.prefab</code> to the scene. <div align="center"><br> <img src="imgs/CardboardMainPrefab.png"> <img src="imgs/CrossInputPrefab.png"><br> </div></li><li>In game object <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-54-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-160" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-161"><span class="mo" id="MathJax-Span-162" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-54">\rightarrow</script></span> <code>Head</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-55-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-163" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-164"><span class="mo" id="MathJax-Span-165" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-55">\rightarrow</script></span> <code>Main Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-56-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-166" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-167"><span class="mo" id="MathJax-Span-168" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-56">\rightarrow</script></span> right click <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-57-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-169" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-170"><span class="mo" id="MathJax-Span-171" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-57">\rightarrow</script></span> <code>Create Empty</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-58-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-172" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-173"><span class="mo" id="MathJax-Span-174" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-58">\rightarrow</script></span> rename it to <code>Pivot</code>.</li><li>In game object <code>_CrossInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-59-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-175" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-176"><span class="mo" id="MathJax-Span-177" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-59">\rightarrow</script></span> <code>_XimInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-60-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-178" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-179"><span class="mo" id="MathJax-Span-180" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-60">\rightarrow</script></span> <code>X-Hawk</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-61-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-181" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-182"><span class="mo" id="MathJax-Span-183" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-61">\rightarrow</script></span> go to <code>Inspector</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-62-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-184" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-185"><span class="mo" id="MathJax-Span-186" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-62">\rightarrow</script></span> <code>X Hawk Input Manager (Script)</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-63-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-187" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-188"><span class="mo" id="MathJax-Span-189" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-63">\rightarrow</script></span> <code>Tracking Pivot</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-64-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-190" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-191"><span class="mo" id="MathJax-Span-192" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-64">\rightarrow</script></span> click <code>Select Transform</code> button in the right side <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-65-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-193" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-194"><span class="mo" id="MathJax-Span-195" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-65">\rightarrow</script></span> select <code>Pivot</code> that is just created. <div align="center"><br> <img src="imgs/SetPivot.png"><br> </div></li><li>Add <code>VR Context</code> component to game object <code>CardboardMain</code> by selecting <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-66-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-196" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-197"><span class="mo" id="MathJax-Span-198" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-66">\rightarrow</script></span> go to <code>Inspector</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-67-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-199" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-200"><span class="mo" id="MathJax-Span-201" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-67">\rightarrow</script></span> click <code>Add Component</code> button <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-68-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-202" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-203"><span class="mo" id="MathJax-Span-204" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-68">\rightarrow</script></span> search and select <code>VR Context</code>, then add reset buttons <code>Left_Start</code> and <code>Right_Start</code> to <code>VR Context</code>. <div align="center"><br> <img src="imgs/VRContext.png"><br> </div></li><li>Drag <code>pf_x_cobra_00.prefab</code> and <code>pf_x_cobra_01.prefab</code> under <code>Assets\Ximmerse SDK\Prefabs\Input</code> to the scene. <div align="center"><br> <img src="imgs/PfXCobraPrefab.png"><br> </div></li><li><em>(optional)</em> Modify camera components <code>Main Camera</code>, <code>Main Camera Left</code> and <code>Main Camera Right</code> by selecting them (one by one) <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-69-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-205" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-206"><span class="mo" id="MathJax-Span-207" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-69">\rightarrow</script></span> go to <code>Inspector</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-70-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-208" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-209"><span class="mo" id="MathJax-Span-210" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-70">\rightarrow</script></span> <code>Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-71-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-211" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-212"><span class="mo" id="MathJax-Span-213" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-71">\rightarrow</script></span> <code>Clear Flags</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-72-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-214" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-215"><span class="mo" id="MathJax-Span-216" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-72">\rightarrow</script></span> select <code>Skybox</code>, then set <code>Clipping Planes</code>‘s <code>Near</code> to <code>0.01</code>. <div align="center"><br> <img src="imgs/Skybox.png"><br> </div></li><li><em>(optional)</em> <code>_CrossInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-73-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-217" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-218"><span class="mo" id="MathJax-Span-219" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-73">\rightarrow</script></span> <code>_XimInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-74-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-220" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-221"><span class="mo" id="MathJax-Span-222" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-74">\rightarrow</script></span> <code>X-Hawk</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-75-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-223" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-224"><span class="mo" id="MathJax-Span-225" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-75">\rightarrow</script></span> go to <code>Inspector</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-76-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-226" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-227"><span class="mo" id="MathJax-Span-228" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-76">\rightarrow</script></span> <code>X Hawk Input Manager (Script)</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-77-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-229" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-230"><span class="mo" id="MathJax-Span-231" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-77">\rightarrow</script></span> modify <code>Sensitivity</code> to change the scaling values of lighting blobs, or <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-78-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-232" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-233"><span class="mo" id="MathJax-Span-234" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-78">\rightarrow</script></span> <code>Head</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-79-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-235" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-236"><span class="mo" id="MathJax-Span-237" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-79">\rightarrow</script></span> <code>Main Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-80-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-238" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-239"><span class="mo" id="MathJax-Span-240" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-80">\rightarrow</script></span> <code>Pivot</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-81-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-241" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-242"><span class="mo" id="MathJax-Span-243" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-81">\rightarrow</script></span> go to <code>Inspector</code> tab <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-82-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-244" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-245"><span class="mo" id="MathJax-Span-246" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-82">\rightarrow</script></span> modify <code>Transform</code> to change the space transform of lighting blobs.<div align="center"><br><img src="imgs/Sensitivity.png"> <img src="imgs/Transform.png"><br></div></li><li>Generate APK by clicking menu <code>File</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-83-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-247" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-248"><span class="mo" id="MathJax-Span-249" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-83">\rightarrow</script></span> <code>Build Settings...</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-84-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-250" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-251"><span class="mo" id="MathJax-Span-252" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-84">\rightarrow</script></span> <code>Android</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-85-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-253" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-254"><span class="mo" id="MathJax-Span-255" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-85">\rightarrow</script></span> check on options <code>Development Build</code> and <code>Autoconnect Profiler</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-86-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-256" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-257"><span class="mo" id="MathJax-Span-258" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-86">\rightarrow</script></span> <code>Build</code>.<blockquote>
+<li>Setup SDK environment as described <a href="#anchor-cardboard-setup">above</a>.</li><li>Delete the default game object <code>Main Camera</code> from the scene.</li><li>Menu <code>GameObject</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-52-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-154" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-155"><span class="mo" id="MathJax-Span-156" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-52">\rightarrow</script></span> <code>Create Empty</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-53-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-157" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-158"><span class="mo" id="MathJax-Span-159" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-53">\rightarrow</script></span> rename it to <code>Main Camera</code>.</li><li>Drag both <code>Assets\Cardboard\Prefabs\CardboardMain.prefab</code> and <code>Assets\Ximmerse SDK\Prefabs\Input\_CrossInput.prefab</code> to the scene. <div align="center"><br> <img src="imgs/CardboardMainPrefab.png"> <img src="imgs/CrossInputPrefab.png"><br> </div></li><li>In game object <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-54-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-160" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-161"><span class="mo" id="MathJax-Span-162" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-54">\rightarrow</script></span> <code>Head</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-55-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-163" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-164"><span class="mo" id="MathJax-Span-165" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-55">\rightarrow</script></span> <code>Main Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-56-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-166" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-167"><span class="mo" id="MathJax-Span-168" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-56">\rightarrow</script></span> right click <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-57-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-169" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-170"><span class="mo" id="MathJax-Span-171" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-57">\rightarrow</script></span> <code>Create Empty</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-58-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-172" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-173"><span class="mo" id="MathJax-Span-174" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-58">\rightarrow</script></span> rename it to <code>Pivot</code>.</li><li>In game object <code>_CrossInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-59-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-175" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-176"><span class="mo" id="MathJax-Span-177" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-59">\rightarrow</script></span> <code>_XimInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-60-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-178" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-179"><span class="mo" id="MathJax-Span-180" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-60">\rightarrow</script></span> <code>X-Hawk</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-61-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-181" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-182"><span class="mo" id="MathJax-Span-183" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-61">\rightarrow</script></span> in <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-62-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-184" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-185"><span class="mo" id="MathJax-Span-186" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-62">\rightarrow</script></span> <code>X Hawk Input Manager (Script)</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-63-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-187" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-188"><span class="mo" id="MathJax-Span-189" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-63">\rightarrow</script></span> <code>Tracking Pivot</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-64-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-190" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-191"><span class="mo" id="MathJax-Span-192" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-64">\rightarrow</script></span> click <code>Select Transform</code> button in the right side <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-65-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-193" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-194"><span class="mo" id="MathJax-Span-195" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-65">\rightarrow</script></span> select <code>Pivot</code> that is just created. <div align="center"><br> <img src="imgs/SetPivot.png"><br> </div></li><li>Add <code>VR Context</code> component to game object <code>CardboardMain</code> by selecting <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-66-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-196" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-197"><span class="mo" id="MathJax-Span-198" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-66">\rightarrow</script></span> in <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-67-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-199" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-200"><span class="mo" id="MathJax-Span-201" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-67">\rightarrow</script></span> click <code>Add Component</code> button <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-68-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-202" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-203"><span class="mo" id="MathJax-Span-204" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-68">\rightarrow</script></span> search and select <code>VR Context</code>, then add reset buttons <code>Left_Start</code> and <code>Right_Start</code> to <code>VR Context</code>. <div align="center"><br> <img src="imgs/VRContext.png"><br> </div></li><li>Drag <code>pf_x_cobra_00.prefab</code> and <code>pf_x_cobra_01.prefab</code> under <code>Assets\Ximmerse SDK\Prefabs\Input</code> to the scene. <div align="center"><br> <img src="imgs/PfXCobraPrefab.png"><br> </div></li><li><em>(optional)</em> Modify camera components <code>Main Camera</code>, <code>Main Camera Left</code> and <code>Main Camera Right</code> by selecting them (one by one) <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-69-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-205" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-206"><span class="mo" id="MathJax-Span-207" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-69">\rightarrow</script></span> in <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-70-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-208" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-209"><span class="mo" id="MathJax-Span-210" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-70">\rightarrow</script></span> <code>Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-71-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-211" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-212"><span class="mo" id="MathJax-Span-213" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-71">\rightarrow</script></span> <code>Clear Flags</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-72-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-214" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-215"><span class="mo" id="MathJax-Span-216" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-72">\rightarrow</script></span> select <code>Skybox</code>, then set <code>Clipping Planes</code>‘s <code>Near</code> to <code>0.01</code>. <div align="center"><br> <img src="imgs/Skybox.png"><br> </div></li><li><em>(optional)</em> <code>_CrossInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-73-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-217" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-218"><span class="mo" id="MathJax-Span-219" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-73">\rightarrow</script></span> <code>_XimInput</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-74-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-220" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-221"><span class="mo" id="MathJax-Span-222" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-74">\rightarrow</script></span> <code>X-Hawk</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-75-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-223" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-224"><span class="mo" id="MathJax-Span-225" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-75">\rightarrow</script></span> in <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-76-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-226" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-227"><span class="mo" id="MathJax-Span-228" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-76">\rightarrow</script></span> <code>X Hawk Input Manager (Script)</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-77-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-229" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-230"><span class="mo" id="MathJax-Span-231" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-77">\rightarrow</script></span> modify <code>Sensitivity</code> to change the scaling values of lighting blobs, or <code>CardboardMain</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-78-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-232" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-233"><span class="mo" id="MathJax-Span-234" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-78">\rightarrow</script></span> <code>Head</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-79-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-235" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-236"><span class="mo" id="MathJax-Span-237" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-79">\rightarrow</script></span> <code>Main Camera</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-80-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-238" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-239"><span class="mo" id="MathJax-Span-240" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-80">\rightarrow</script></span> <code>Pivot</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-81-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-241" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-242"><span class="mo" id="MathJax-Span-243" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-81">\rightarrow</script></span> in <code>Inspector</code> view <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-82-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-244" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-245"><span class="mo" id="MathJax-Span-246" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-82">\rightarrow</script></span> modify <code>Transform</code> to change the space transform of lighting blobs.<div align="center"><br><img src="imgs/Sensitivity.png"> <img src="imgs/Transform.png"><br></div></li><li>Generate APK by clicking menu <code>File</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-83-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-247" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-248"><span class="mo" id="MathJax-Span-249" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-83">\rightarrow</script></span> <code>Build Settings...</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-84-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-250" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-251"><span class="mo" id="MathJax-Span-252" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-84">\rightarrow</script></span> <code>Android</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-85-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-253" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-254"><span class="mo" id="MathJax-Span-255" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-85">\rightarrow</script></span> check on options <code>Development Build</code> and <code>Autoconnect Profiler</code><span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-86-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-256" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-257"><span class="mo" id="MathJax-Span-258" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-86">\rightarrow</script></span> <code>Build</code>.<blockquote>
 <p>Note:</p>
 <ol>
 <li>If it asks to search for the Android SDK when building, you will ned to specify the Android SDK root folder in the file dialog:<br> <img src="imgs/FileDialog2.png" alt=""><ul>
@@ -932,7 +946,7 @@ int sixenseSetButtonRemap(int* buttons);
 <li>Similar to Gear VR, run it via default applications. Check out <a href="#anchor-run-APK">7.2 Developing with Gear VR - Step 4</a> for details.</li><li>After APK runs, mannually click the <code>OK</code> button in the dialog.</li></ol><blockquote>
 <p>Note: The first running style can be disabled by removing or commenting out the following code segment of file <code>${ProjectDir}\Assets\Plugins\Android\AndroidManifest_Cardboard.xml</code> and merge it to <code>AndroidManifest.xml</code> file of the project.<br>    <img src="imgs/DisableRunAPK.png" alt=""></p>
 </blockquote><h3 id="9.4-connect-ximmerse-devices-via-bluetooth-in-android"><a name="9.4-connect-ximmerse-devices-via-bluetooth-in-android" href="#9.4-connect-ximmerse-devices-via-bluetooth-in-android"></a>9.4 Connect Ximmerse Devices via Bluetooth in Android</h3><p>Ximmerse Devices including X-Cobra and X-Swift can be connected via Bluetooth in Android.</p><p>Steps:</p><ol>
-<li>Install <a href="https://github.com/Ximmerse/SDK/raw/master/APKs/BluetoothSetting.apk">BluetoothSetting.apk</a>.</li><li>Turn on Bluetooth in Android mobile.</li><li>Run Bluetooth Setting. Detailed functions are as follows:<br> ① Path of Bluetooth setting file.<br> ② Save current Bluetooth setting.<br> ③ Reload Bluetooth setting.<br> ④ Device name.<br> ⑤ Device Bluetooth address.<br> ⑥ Scan and connect devices.<br> ⑦ Quit application. <div align="center"><br> <img src="imgs/BluetoothSetting.png"><br> </div></li><li>Click <code>Save</code> button to save current Bluetooth setting after setting properly, then click <code>Quit</code> to exit the application.</li><li>Done. Now you should be able to connect and use the corresponding Bluetooth devices in the deployed APKs.</li></ol><hr class="page"><h2 id="10-sdk-file-structure"><a name="10-sdk-file-structure" href="#10-sdk-file-structure"></a>10 SDK File Structure</h2><p>All required files can be downloaded from our <a href="https://github.com/Ximmerse/SDK">SDK github page</a>, including</p><ol>
+<li>Install <a href="https://github.com/Ximmerse/SDK/raw/master/APKs/BluetoothSetting.apk">BluetoothSetting.apk</a>.</li><li>Turn on Bluetooth in Android mobile.</li><li>Run Bluetooth Setting. Detailed functions are as follows:<br> ① Path of Bluetooth setting file.<br> ② Save current Bluetooth setting.<br> ③ Reload Bluetooth setting.<br> ④ Device name.<br> ⑤ Device Bluetooth address.<br> ⑥ Scan and connect devices.<br> ⑦ Quit application. <div align="center"><br> <img src="imgs/BluetoothSetting.png"><br> </div></li><li>Click <code>Save</code> button to save current Bluetooth setting after setting properly, then click <code>Quit</code> to exit the application.</li><li>Done. Now you should be able to connect and use the corresponding Bluetooth devices in the deployed APKs.</li></ol><hr class="page"><h2 id="10-misc."><a name="10-misc." href="#10-misc."></a>10 Misc.</h2><p>All required files can be downloaded from our <a href="https://github.com/Ximmerse/SDK">SDK github page</a>, including</p><ol>
 <li>SDK Unity package: <kbd>Unity <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-89-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-265" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-266"><span class="mo" id="MathJax-Span-267" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-89">\rightarrow</script></span> Ximmerse SDK 2.0.unitypackage</kbd>.</li><li>Native C++ SDK: <kbd>Native C++</kbd>.</li><li><a name="tools"></a>Tools: detailed instructioins for using these tools can be found <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">here</a>.<ul>
 <li>Tracking HID demo: <kbd>Tools <span><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-90-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-268" style="width: 1.217em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.045em 1000em 2.9em -0.444em); top: -2.722em; left: 0em;"><span class="mrow" id="MathJax-Span-269"><span class="mo" id="MathJax-Span-270" style="font-family: MathJax_Main;">→</span></span><span style="display: inline-block; width: 0px; height: 2.722em;"></span></span></span><span style="border-left-width: 0em; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 0.76em; vertical-align: -0.08em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-90">\rightarrow</script></span> Tracking_hid.zip</kbd>.<blockquote>
 <p>This demo shows how to obtain detailed info of X-Cobras via X-Hawk. It is helpful to validate</p>
@@ -963,7 +977,7 @@ int sixenseSetButtonRemap(int* buttons);
 <!-- sites status -->
 <hr class="page">
 <div>
-  <span><i>&copy; 2015-2016 <a href="http://www.ximmerse.com/">Xim Industry Inc.</a></i></span> <span style="float:right"><small><i>Last Updated on Feb. 21, 2016.</i></small></span>
+  <span><i>&copy; 2015-2016 <a href="http://www.ximmerse.com/">Xim Industry Inc.</a></i></span> <span style="float:right"><small><i>Last Updated on Feb. 22, 2016.</i></small></span>
   <div align="center">
     <img src="imgs/xim.png" align="left" width="180" style="float:left" />
     <a href="http://www.clustrmaps.com/map/ximmerse.github.io/SDK_Doc/" title="">
